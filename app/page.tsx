@@ -1,18 +1,22 @@
-import Image from "next/image"
-import { Header } from "@/components/header"
-import { Button } from "@/components/ui/button"
-import { SwipeCarousel } from "@/components/coursal"
+import { Carousel } from "@/components/coursal"
+import HeaderContainner from "@/components/header"
+import NewsLatter from "@/components/newsletter"
 import { ServicesSection } from "@/components/services"
 import { StatsSection } from "@/components/stats"
+import TestimonialCarousel from "@/components/testimonials"
+import Image from "next/image"
+
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
-      <Header />
-      <main className="flex-1">
-        <SwipeCarousel/>
+      <HeaderContainner />
+      <main className="flex-1 mx-16">
+        <Carousel/>
         <ServicesSection/>
         <StatsSection/>
+        <TestimonialCarousel/>
+        <NewsLatter/>
       </main>
     </div>
   )

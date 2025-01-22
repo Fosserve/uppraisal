@@ -1,102 +1,113 @@
-"use client"
+'use client'
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { Search, Menu, Home, Compass, PlusSquare, Info } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { cn } from "@/lib/utils"
+import { useState } from 'react';
+import { Dialog, DialogPanel } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
-export function Header() {
-  const pathname = usePathname()
+const navigation = [
+  { name: 'Home', href: '#' },
+  { name: 'careers', href: '#' },
+  { name: 'Our Services', href: '#' },
+  { name: 'About Us', href: '#' },
+];
 
-  const navItems = [
-    { href: "/", label: "Home", icon: Home },
-    { href: "/discover", label: "Careers", icon: Compass },
-    { href: "/create", label: "Our Services", icon: PlusSquare },
-    { href: "/about", label: "About Us", icon: Info },
-  ]
+export default function HeaderContainner() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
-      <div className="container flex h-16 items-center gap-8 justify-between">
-        <div className="flex items-center justify-between w-[100%] gap-8">
-          <Link href="/" className="flex items-center space-x-2 transition-all duration-300 hover:scale-105">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-8 w-8 text-primary"
-            >
-              <polygon points="12 2 2 7 12 12 22 7 12 2" />
-              <polyline points="2 17 12 22 22 17" />
-              <polyline points="2 12 12 17 22 12" />
-            </svg>
-          </Link>
-          <Sheet>
-            <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon" className="hover:bg-primary/95">
-                <Menu className="h-5 w-5" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-64">
-              <nav className="flex flex-col gap-4 mt-8">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={cn(
-                      "text-sm font-medium transition-all duration-300 flex items-center gap-2 hover:translate-x-1",
-                      pathname === item.href
-                        ? "text-primary font-semibold"
-                        : "text-muted-foreground hover:text-primary",
-                    )}
-                  >
-                    <item.icon className="w-4 h-4" />
-                    {item.label}
-                  </Link>
-                ))}
-              </nav>
-            </SheetContent>
-          </Sheet>
-          <nav className="hidden md:flex  gap-6">
-            {navItems.slice(1).map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  "text-sm font-medium transition-all duration-300 flex items-center gap-2 hover:scale-105",
-                  pathname === item.href ? "text-primary font-semibold" : "text-muted-foreground hover:text-primary",
-                )}
-              >
-                <item.icon className="w-4 h-4" />
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-        <div className="flex items-center gap-4">
-          {/* <div className="relative hidden md:block">
-            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-            <input
-              type="search"
-              placeholder="Search..."
-              className="w-48 rounded-full border bg-background px-4 py-2 pl-8 text-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-            />
-          </div> */}
-          <Button
-            variant="default"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:scale-105"
+    <header className="sticky top-0 z-20  bg-[hsl(var(--background))]">  
+      <nav
+        aria-label="Global"
+        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+      >
+        <a href="#" className="-m-1.5 p-1.5">
+          <span className="sr-only">Your Company</span>
+          <img
+            alt=""
+            src="https://tailwindui.com/plus/img/logos/mark.svg?color=hsl(var(--primary))"
+            className="h-8 w-auto"
+          />
+        </a>
+        <div className="flex lg:hidden">
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(true)}
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-[hsl(var(--foreground))]"
           >
-            Contact Us
-          </Button>
+            <span className="sr-only">Open main menu</span>
+            <Bars3Icon aria-hidden="true" className="h-6 w-6" />
+          </button>
         </div>
-      </div>
+        <div className="hidden lg:flex items-center lg:gap-x-12">
+          {navigation.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className="text-sm font-semibold text-[hsl(var(--foreground))] hover:text-[hsl(var(--primary))]"
+            >
+              {item.name}
+            </a>
+          ))}
+          <a
+            href="#"
+            className="text-sm font-semibold bg-primary text-white px-2 py-2 rounded-md active:text-primary hover:bg-white hover:text-[hsl(var(--primary))]"
+          >
+            Contact us <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </nav>
+      <Dialog
+        open={mobileMenuOpen}
+        onClose={setMobileMenuOpen}
+        className="lg:hidden"
+      >
+        <div className="fixed inset-0 z-10 bg-[hsl(var(--background))]" />
+        <DialogPanel
+          className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-[hsl(var(--background))] px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-[hsl(var(--ring))]"
+        >
+          <div className="flex items-center justify-between">
+            <a href="#" className="-m-1.5 p-1.5">
+              <span className="sr-only">Your Company</span>
+              <img
+                alt=""
+                src="https://tailwindui.com/plus/img/logos/mark.svg?color=hsl(var(--primary))"
+                className="h-8 w-auto"
+              />
+            </a>
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(false)}
+              className="-m-2.5 rounded-md p-2.5 text-[hsl(var(--foreground))]"
+            >
+              <span className="sr-only">Close menu</span>
+              <XMarkIcon aria-hidden="true" className="h-6 w-6" />
+            </button>
+          </div>
+          <div className="mt-6 flow-root">
+            <div className="-my-6 divide-y divide-[hsl(var(--muted))]">
+              <div className="space-y-2 py-6">
+                {navigation.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-[hsl(var(--foreground))] hover:bg-[hsl(var(--primary))]"
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+              <div className="py-6">
+                <a
+                  href="#"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-[hsl(var(--foreground))] hover:bg-[hsl(var(--primary))]"
+                >
+                  Log in
+                </a>
+              </div>
+            </div>
+          </div>
+        </DialogPanel>
+      </Dialog>
     </header>
-  )
+  );
 }
-

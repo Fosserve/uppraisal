@@ -1,136 +1,114 @@
 "use client"
 
-import React, { type Dispatch, type SetStateAction, useEffect, useState } from "react"
-import { motion, useMotionValue } from "framer-motion"
+import React, { useState, useEffect } from "react"
 import Image from "next/image"
 import Pic1 from "../public/pic1.jpg"
 import Pic2 from "../public/pic2.jpg"
 import Pic3 from "../public/pic3.jpg"
 import Pic4 from "../public/pic4.jpg"
 
-
 const imgs = [
-  {
-    src: Pic1,
-    caption: "Share your creations with the world",
-  },
-  {
-    src: Pic2,
-    caption: "Discover unique digital art",
-  },
-  {
-    src: Pic3,
-    caption: "Connect with creative minds",
-  },
-  {
-    src: Pic4,
-    caption: "Bring your ideas to life",
-  },
+  { src: Pic1, caption: "Share your creations with the world" },
+  { src: Pic2, caption: "Discover unique digital art" },
+  { src: Pic3, caption: "Connect with creative minds" },
+  { src: Pic4, caption: "Bring your ideas to life" },
 ]
 
-const ONE_SECOND = 1000
-const AUTO_DELAY = ONE_SECOND * 10
-const DRAG_BUFFER = 50
-
-const SPRING_OPTIONS = {
-  type: "spring",
-  mass: 3,
-  stiffness: 400,
-  damping: 50,
-}
-
-export const SwipeCarousel = () => {
+export const Carousel = () => {
   const [imgIndex, setImgIndex] = useState(0)
-  const dragX = useMotionValue(0)
 
+  // Automatically cycle through images every 5 seconds
   useEffect(() => {
-    const intervalRef = setInterval(() => {
-      const x = dragX.get()
-      if (x === 0) {
-        setImgIndex((prev) => (prev === imgs.length - 1 ? 0 : prev + 1))
-      }
-    }, AUTO_DELAY)
-
-    return () => clearInterval(intervalRef)
+    const interval = setInterval(() => {
+      setImgIndex((prev) => (prev === imgs.length - 1 ? 0 : prev + 1))
+    }, 5000)
+    return () => clearInterval(interval)
   }, [])
 
-  const onDragEnd = () => {
-    const x = dragX.get()
-    if (x <= -DRAG_BUFFER && imgIndex < imgs.length - 1) {
-      setImgIndex((prev) => prev + 1)
-    } else if (x >= DRAG_BUFFER && imgIndex > 0) {
-      setImgIndex((prev) => prev - 1)
-    }
+  const handlePrev = () => {
+    setImgIndex((prev) => (prev === 0 ? imgs.length - 1 : prev - 1))
+  }
+
+  const handleNext = () => {
+    setImgIndex((prev) => (prev === imgs.length - 1 ? 0 : prev + 1))
   }
 
   return (
-    <div className="relative overflow-hidden bg-background py-4">
-      <motion.div
-        drag="x"
-        dragConstraints={{ left: 0, right: 0 }}
-        style={{ x: dragX }}
-        animate={{ translateX: `-${imgIndex * 100}%` }}
-        transition={SPRING_OPTIONS}
-        onDragEnd={onDragEnd}
-        className="flex cursor-grab items-center active:cursor-grabbing"
-      >
-        <Images imgIndex={imgIndex} />
-      </motion.div>
-
-      <Dots imgIndex={imgIndex} setImgIndex={setImgIndex} />
-      <GradientEdges />
-    </div>
-  )
-}
-
-const Images = ({ imgIndex }: { imgIndex: number }) => {
-  return (
-    <>
-      {imgs.map(({ src, caption }, idx) => (
-        <motion.div
-          key={idx}
-          animate={{ scale: imgIndex === idx ? 0.95 : 0.85 }}
-          transition={SPRING_OPTIONS}
-          className="relative aspect-video h-[600px] w-screen shrink-0 rounded-xl bg-muted"
-        >
-          <Image src={src || "/placeholder.svg"} alt={caption} fill className="object-cover rounded-xl " />
-          <div className="absolute inset-0 flex items-end justify-start m-4 w-[100%]">
-            <div className="text-center bg-background/80 p-4 rounded-lg shadow-lg animate-fade-in max-w-md">
-              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-2">{caption}</h2>
+    <div id="animation-carousel" className="relative w-full" data-carousel="static">
+      {/* Carousel wrapper */}
+      <div className="relative h-4/6 overflow-hidden rounded-lg md:h-96">
+        {imgs.map((img, idx) => (
+          <div
+            key={idx}
+            className={`${
+              idx === imgIndex ? "block" : "hidden"
+            } duration-200 ease-linear`}
+            data-carousel-item
+          >
+            <Image
+              src={img.src}
+              alt={img.caption}
+              className="relative h-[800px] block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              width={1000}
+              height={500}
+            />
+            <div className="absolute bottom-10 left-10 bg-white bg-opacity-70 p-4 rounded-lg">
+              <h3 className="text-xl font-bold text-primary">{img.caption}</h3>
             </div>
           </div>
-        </motion.div>
-      ))}
-    </>
-  )
-}
+        ))}
+      </div>
 
-const Dots = ({
-  imgIndex,
-  setImgIndex,
-}: {
-  imgIndex: number
-  setImgIndex: Dispatch<SetStateAction<number>>
-}) => {
-  return (
-    <div className="mt-4 flex w-full justify-center gap-2">
-      {imgs.map((_, idx) => (
-        <button
-          key={idx}
-          onClick={() => setImgIndex(idx)}
-          className={`h-3 w-3 rounded-full transition-colors ${idx === imgIndex ? "bg-primary" : "bg-muted"}`}
-        />
-      ))}
+      {/* Slider controls */}
+      <button
+        type="button"
+        className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        onClick={handlePrev}
+      >
+        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70">
+          <svg
+            className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M5 1 1 5l4 4"
+            />
+          </svg>
+          <span className="sr-only">Previous</span>
+        </span>
+      </button>
+
+      <button
+        type="button"
+        className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        onClick={handleNext}
+      >
+        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70">
+          <svg
+            className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="m1 9 4-4-4-4"
+            />
+          </svg>
+          <span className="sr-only">Next</span>
+        </span>
+      </button>
     </div>
   )
 }
-
-const GradientEdges = () => {
-  return (
-    <>
-      <div className="pointer-events-none absolute bottom-0 left-0 top-0 w-[10vw] max-w-[100px] bg-gradient-to-r from-background to-background/0" />
-      <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-[10vw] max-w-[100px] bg-gradient-to-l from-background to-background/0" />
-    </>
-  )
-}
-

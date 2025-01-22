@@ -39,7 +39,7 @@ const services = [
 export const ServicesSection = () => {
   return (
     <section className="py-16 px-4 bg-background">
-      <div className="max-w-7xl mx-auto">
+      <div className="mx-auto">
         <div className="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end md:px-8">
           <div className="space-y-4">
             <motion.span
@@ -57,7 +57,7 @@ export const ServicesSection = () => {
               className="text-4xl md:text-5xl font-bold tracking-tight max-w-lg"
             >
               Our Areas Of
-              <span className="text-primary"> Expertise</span>
+              <span className="text-secondary"> Expertise</span>
             </motion.h2>
           </div>
           <motion.div
@@ -65,7 +65,7 @@ export const ServicesSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <Button variant="default" size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button variant="default" size="lg" className="bg-secondary text-primary-foreground hover:bg-secondary/90">
               Learn more
             </Button>
           </motion.div>
@@ -81,7 +81,7 @@ export const ServicesSection = () => {
                     transition={{ duration: 0.5 }}
                     className="p-3 rounded-full bg-primary/10"
                   >
-                    <service.icon className="w-6 h-6 text-primary" />
+                    <service.icon className="w-6 h-6 text-secondary" />
                   </motion.div>
                   <CardTitle>{service.title}</CardTitle>
                 </div>
@@ -125,6 +125,6 @@ const BounceCard = ({
 }
 
 const CardTitle = ({ children }: { children: ReactNode }) => {
-  return <h3 className="text-xl font-semibold text-foreground">{children}</h3>
+  return <h3 className="text-xl font-semibold text-accent">{children}</h3>
 }
 

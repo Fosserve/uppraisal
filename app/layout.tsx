@@ -1,6 +1,9 @@
 import type { Metadata } from "next"
 import { Poppins } from "next/font/google"
 import "./globals.css"
+import clsx from 'clsx'
+import '../styles/tailwind.css'
+
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -19,8 +22,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={`${poppins.variable} font-sans`}>{children}</body>
+    <html lang="en" className={clsx('antialiased', poppins.variable)}>
+      <body>{children}</body>
     </html>
   )
 }
