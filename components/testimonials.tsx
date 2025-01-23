@@ -42,7 +42,7 @@ export default function TestimonialCarousel() {
   return (
     <section className="relative isolate overflow-hidden bg-background py-24 sm:py-32">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,var(--color-indigo-100),white)] opacity-20" />
-      <div className="mx-auto max-w-3xl px-6 lg:px-8">
+      <div className="mx-auto max-w-3xl lg:px-8">
         <div className="text-center">
           <p className="text-xl font-semibold text-primary">What our clients say</p>
           <div className="relative mt-12">

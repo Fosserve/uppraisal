@@ -38,8 +38,8 @@ const services = [
 
 export const ServicesSection = () => {
   return (
-    <section className="py-16 px-4 bg-background">
-      <div className="mx-auto">
+    <section className="py-16 bg-background">
+      <div className="mx-auto ">
         <div className="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end md:px-8">
           <div className="space-y-4">
             <motion.span
@@ -60,15 +60,15 @@ export const ServicesSection = () => {
               <span className="text-secondary"> Expertise</span>
             </motion.h2>
           </div>
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-          >
+          > */}
             <Button variant="default" size="lg" className="bg-secondary text-primary-foreground hover:bg-secondary/90">
               Learn more
             </Button>
-          </motion.div>
+          {/* </motion.div> */}
         </div>
 
         <div className="grid grid-cols-12 gap-4">
