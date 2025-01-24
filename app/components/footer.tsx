@@ -6,6 +6,8 @@ import {
   MapPinIcon,
 } from "@heroicons/react/24/outline";
 
+import { JSX, type SVGProps } from 'react'
+
 interface NavigationItem {
   name: string;
   href: string;

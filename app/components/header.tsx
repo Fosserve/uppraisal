@@ -4,7 +4,6 @@ import React from 'react'
 import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import logo from "../../public/uppraisal-logo.png"
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -25,7 +24,7 @@ const Header = () => {
               <span className="sr-only">Uppraisal Consultant</span>
               <img
                 alt="Uppraisal Consultant"
-                src={logo.src}
+                src={'https://uppraisalconsultant.in/wp-content/themes/uppraisal/assets/images/uppraisal-logo.png'}
                 className="h-10 w-auto"
               />
             </a>
@@ -61,7 +60,7 @@ const Header = () => {
                 <span className="sr-only">Uppraisal Consultant</span>
                 <img
                   alt="Uppraisal Consultant"
-                  src={logo.src}
+                  src={'https://uppraisalconsultant.in/wp-content/themes/uppraisal/assets/images/uppraisal-logo.png'}
                   className="h-10 w-auto"
                 />
               </a>

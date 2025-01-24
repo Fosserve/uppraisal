@@ -4,8 +4,8 @@ const featuredTestimonial = {
       name: 'N Chakravarti',
       handle: 'Chakravarti',
       imageUrl:
-        '',
-      logoUrl: '',
+        'https://uppraisalconsultant.in/wp-content/uploads/2022/03/Untitled-2.png',
+      logoUrl: 'https://uppraisalconsultant.in/wp-content/uploads/2022/03/Untitled-2.png',
     },
   }
   const testimonials = [
@@ -17,7 +17,7 @@ const featuredTestimonial = {
             name: 'KAUSHIK SINHA',
             handle: 'kaushik',
             imageUrl:
-              '',
+              'https://uppraisalconsultant.in/wp-content/uploads/2022/03/Untitled-2.png',
           },
         },
         // More testimonials...
@@ -33,7 +33,7 @@ const featuredTestimonial = {
             name: 'Chayan Bhattacharjee',
             handle: 'Bhattacharjee',
             imageUrl:
-              '',
+              'https://uppraisalconsultant.in/wp-content/uploads/2022/03/Untitled-2.png',
           },
         },
         // More testimonials...
