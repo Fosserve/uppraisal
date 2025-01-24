@@ -60,7 +60,7 @@ const Header = () => {
                 <span className="sr-only">Uppraisal Consultant</span>
                 <img
                   alt="Uppraisal Consultant"
-                  src={logo.src}
+                  src={'https://uppraisalconsultant.in/wp-content/themes/uppraisal/assets/images/uppraisal-logo.png'}
                   className="h-10 w-auto"
                 />
               </a>
