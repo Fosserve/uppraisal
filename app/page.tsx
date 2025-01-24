@@ -1,28 +1,23 @@
-import AboutUS from "@/components/aboutus"
-import ContactUS from "@/components/contact-us"
-import { Carousel } from "@/components/coursal"
-import HeaderContainner from "@/components/header"
-import NewsLatter from "@/components/newsletter"
-import { ServicesSection } from "@/components/services"
-import { StatsSection } from "@/components/stats"
-import TestimonialCarousel from "@/components/testimonials"
-import Image from "next/image"
-
+import HeroSection from "./components/hero_section";
+import FeaturesSection from "./components/features_section";
+import WorkWithUs from "./components/stats";
+import Testimonials from "./components/testimonials";
+import TeamSection from "./components/team_section";
+import LogoCloud from "./components/logoCloud";
+import Faqs from "./components/faqs";
+import Timeline from "./components/timeline";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col">
-      <HeaderContainner />
-      <main className="flex-1 mx-8 sm:mx-16">
-        <Carousel/>
-        <AboutUS />
-        <ServicesSection/>
-        <StatsSection/>
-        <TestimonialCarousel/>
-        <NewsLatter/>
-        <ContactUS/>
-      </main>
-    </div>
-  )
+    <>
+    <HeroSection/>
+    <FeaturesSection/>
+    <Timeline />
+    <Testimonials />
+    <TeamSection />
+    <WorkWithUs/>
+    <LogoCloud/>
+    <Faqs />
+    </>
+  );
 }
-
