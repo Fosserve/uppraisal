@@ -1,11 +1,13 @@
+import { type SVGProps } from 'react'
+
 interface NavigationItem {
     name: string
     href: string
   }
   
   interface SocialItem extends NavigationItem {
-    icon: (props: React.SVGProps<SVGSVGElement>) => JSX.Element
-  }
+    icon: (props: SVGProps<SVGSVGElement>) => React.ReactElement
+   }
   
   const navigation = {
     main: [
@@ -18,7 +20,7 @@ interface NavigationItem {
       {
         name: 'Facebook',
         href: '#',
-        icon: (props: React.SVGProps<SVGSVGElement>) => (
+        icon: (props: SVGProps<SVGSVGElement>) => (
           <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
             <path
               fillRule="evenodd"
@@ -31,7 +33,7 @@ interface NavigationItem {
       {
         name: 'Instagram',
         href: '#',
-        icon: (props: React.SVGProps<SVGSVGElement>) => (
+        icon: (props: SVGProps<SVGSVGElement>) => (
           <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
             <path
               fillRule="evenodd"
@@ -68,4 +70,3 @@ interface NavigationItem {
     </footer>
     )
   }
-  
