@@ -18,7 +18,7 @@ export default function HeaderContainner() {
     <header className="sticky top-0 z-20  bg-[hsl(var(--background))]">  
       <nav
         aria-label="Global"
-        className="mx-auto flex mx-6 sm:mx-16 items-center justify-between p-6 lg:px-8"
+        className="mx-auto flex  sm:mx-16 items-center justify-between p-6 lg:px-8"
       >
         <a href="#" className="-m-1.5 p-1.5">
           <span className="sr-only">Your Company</span>
