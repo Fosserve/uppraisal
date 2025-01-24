@@ -3,7 +3,6 @@
 import React, { type ReactNode } from "react"
 import { motion } from "framer-motion"
 import { Briefcase, Users, Search, HandshakeIcon, Clock } from "lucide-react"
-import { Button } from "@/components/ui/button"
 
 const services = [
   {
@@ -65,9 +64,9 @@ export const ServicesSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           > */}
-            <Button variant="default" size="lg" className="bg-secondary text-primary-foreground hover:bg-secondary/90">
+            <button   className="bg-secondary text-primary-foreground hover:bg-secondary/90">
               Learn more
-            </Button>
+            </button>
           {/* </motion.div> */}
         </div>
 
