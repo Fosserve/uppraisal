@@ -7,7 +7,6 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import logo from "../../public/uppraisal-logo.png"
 
 const navigation = [
-  { name: 'Home', href: '/' },
   { name: 'About Us', href: '/aboutus' },
   { name: 'Career', href: '/career' },
   { name: 'Our Services', href: '/services' },

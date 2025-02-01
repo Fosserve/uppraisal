@@ -27,26 +27,24 @@ const logos = [
   { name: "BG Distributions", url: logo7 },
   { name: "Emami Ltd", url: logo8 },
   { name: "Keventer", url: logo9 },
-  { name: "Mohan Motors", url: logo10 },
-  { name: "Paharpur", url: logo11 },
-  { name: "Siddha Group", url: logo12 },
-  { name: "Ronak Optik India", url: logo13 },
-  { name: "IFB", url: logo14 },
+  // { name: "Mohan Motors", url: logo10 },
+  // { name: "Paharpur", url: logo11 },
+  // { name: "Siddha Group", url: logo12 },
+  // { name: "Ronak Optik India", url: logo13 },
+  // { name: "IFB", url: logo14 },
 ];
 
 export default function LogoCloud() {
  
 
   return (
-    <div className="bg-white py-24 sm:py-32 overflow-hidden">
+    <div className="bg-white py-12 sm:py-16 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <h2 className="text-lg sm:text-center font-semibold text-gray-900">
           Trusted by the world’s most innovative teams
         </h2>
-
         <div
           className="relative mt-10 flex space-x-9 logo-cloud "
-          
         >
           {logos.concat(logos).map((logo, index) => (
             <div key={index} className="flex flex-none justify-center px-2">
@@ -60,16 +58,11 @@ export default function LogoCloud() {
             </div>
           ))}
         </div>
-
-        <div className="mt-16 flex justify-center">
+        <div className="mt-16 block flex justify-center">
           <p className="relative rounded-full bg-gray-50 px-4 py-1.5 text-sm text-gray-600 ring-1 ring-gray-900/5">
             <span className="hidden md:inline">
               Over 25+ companies use our tools to better their business.
             </span>
-            <a href="#" className="font-semibold text-indigo-600">
-              <span aria-hidden="true" className="absolute inset-0" /> Read our
-              customer stories <span aria-hidden="true">→</span>
-            </a>
           </p>
         </div>
       </div>

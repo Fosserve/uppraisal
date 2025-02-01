@@ -1,5 +1,15 @@
 "use client";
 
+import logo10 from "../../public/Clients_logos/mohan_motars.jpeg";
+import logo11 from "../../public/Clients_logos/paharpur-logo.png";
+import logo12 from "../../public/Clients_logos/siddha-group-logo.png";
+import logo13 from "../../public/Clients_logos/ronak_optik_india_private_limited_logo.jpeg";
+import logo14 from "../../public/Clients_logos/IFB.png";
+import { HomeIcon } from '@heroicons/react/20/solid'
+import logo from "../../public/uppraisal-logo.png"
+
+
+
 const timeline = [
   {
     name: "Establishment of UPPRAISAL CONSULTANT",
@@ -56,17 +66,66 @@ const Values = [
       "We believe in the power of teamwork. By fostering collaboration among our team and with our clients, we create innovative solutions that address complex challenges.",
   }
 ];
+
+const pages = [
+  { name: 'About Us', href: '/aboutus', current: false },
+]
+
+
 export default function Example() {
   return (
-    <div className="bg-white mb-24">
-      <main className="isolate">
+    <div className="bg-white py-12">
+      <header className="absolute inset-x-0 top-0 z-50">
+        <nav aria-label="Global" className="mx-auto flex flex-col max-w-7xl items-start justify-between p-6 lg:px-8">
+          <div className="flex lg:flex-1">
+            <a href="/" className="-m-1.5 p-1.5">
+              <span className="sr-only">Uppraisal Consultant</span>
+              <img
+                alt="Uppraisal Consultant"
+                src={logo.src}
+                className="h-10 w-auto"
+              />
+            </a>
+          </div>
+          <div className="flex mt-8">
+                <ol role="list" className="flex items-center space-x-4">
+                  <li>
+                    <div>
+                      <a href="/" className="text-gray-700 hover:text-gray-800">
+                        <HomeIcon aria-hidden="true" className="size-6 shrink-0" />
+                        <span className="sr-only">Home</span>
+                      </a>
+                    </div>
+                  </li>
+                  {pages.map((page) => (
+                    <li key={page.name}>
+                      <div className="flex items-center">
+                        <svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" className="size-5 shrink-0 text-gray-300">
+                          <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
+                        </svg>
+                        <a
+                          href={page.href}
+                          aria-current={page.current ? 'page' : undefined}
+                          className="ml-4 text-lg font-medium text-gray-700 hover:text-gray-800"
+                        >
+                          {page.name}
+                        </a>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+                </div>
+        </nav>
+      </header>
+      <main className="isolate mt-32">
+      
         {/* Hero section */}
-        <div className="relative isolate -z-10 overflow-hidden bg-linear-to-b from-indigo-100/20 pt-14">
+        <div className="relative isolate -z-10 overflow-hidden bg-linear-to-b from-indigo-100/20">
           <div
             aria-hidden="true"
             className="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white ring-1 shadow-xl shadow-indigo-600/10 ring-indigo-50 sm:-mr-80 lg:-mr-96"
           />
-          <div className="mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8">
+          <div className="mx-auto max-w-7xl px-6 py-12 sm:-py16 lg:px-8">
             <div className="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-8 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
               {/* <h1 class="max-w-2xl text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl lg:col-span-2 xl:col-auto">We’re changing the way people connect</h1> */}
               <h1 className="max-w-2xl text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl lg:col-span-2 xl:col-auto">
@@ -127,7 +186,7 @@ export default function Example() {
 
         {/* Logo cloud */}
         <div className="mx-auto mt-32 max-w-7xl sm:mt-40 sm:px-6 lg:px-8">
-          <div className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16">
+          <div className="relative isolate overflow-hidden bg-gray-700 px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16">
             <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
               Our customers love us
             </h2>
@@ -138,36 +197,36 @@ Different Industries"
             </p>
             <div className="mx-auto mt-20 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:max-w-4xl lg:grid-cols-5">
               <img
-                alt="Transistor"
-                src="https://tailwindui.com/plus/img/logos/158x48/transistor-logo-white.svg"
+                alt="Mohan Motors"
+                src={logo10.src}
                 width={158}
                 height={48}
                 className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
               />
               <img
-                alt="Reform"
-                src="https://tailwindui.com/plus/img/logos/158x48/reform-logo-white.svg"
+                alt="Paharpur"
+                src={logo11.src}
                 width={158}
                 height={48}
                 className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
               />
               <img
-                alt="Tuple"
-                src="https://tailwindui.com/plus/img/logos/158x48/tuple-logo-white.svg"
+                alt="Siddha Group"
+                src={logo12.src}
                 width={158}
                 height={48}
                 className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
               />
               <img
-                alt="SavvyCal"
-                src="https://tailwindui.com/plus/img/logos/158x48/savvycal-logo-white.svg"
+                alt="IFB"
+                src={logo14.src}
                 width={158}
                 height={48}
                 className="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
               />
               <img
-                alt="Statamic"
-                src="https://tailwindui.com/plus/img/logos/158x48/statamic-logo-white.svg"
+                alt="Ronak Optik India"
+                src={logo13.src}
                 width={158}
                 height={48}
                 className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"

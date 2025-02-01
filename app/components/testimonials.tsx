@@ -1,11 +1,13 @@
+import logo1 from "../../public/Clients_logos/keventer-logo.jpg"
+
 const featuredTestimonial = {
     body: "One of the fastest growing employment consultancy having highly enriched candidate base for fulfilling customer needs as and when required. Compliance Manager POWER ARGO FARMS PVT. LTD ",
     author: {
       name: 'N Chakravarti',
       handle: 'Chakravarti',
       imageUrl:
-        'https://uppraisalconsultant.in/wp-content/uploads/2022/03/Untitled-2.png',
-      logoUrl: 'https://uppraisalconsultant.in/wp-content/uploads/2022/03/Untitled-2.png',
+        'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
+      logoUrl: logo1.src,
     },
   }
   const testimonials = [
@@ -17,7 +19,7 @@ const featuredTestimonial = {
             name: 'KAUSHIK SINHA',
             handle: 'kaushik',
             imageUrl:
-              'https://uppraisalconsultant.in/wp-content/uploads/2022/03/Untitled-2.png',
+              'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
           },
         },
         // More testimonials...
@@ -33,7 +35,7 @@ const featuredTestimonial = {
             name: 'Chayan Bhattacharjee',
             handle: 'Bhattacharjee',
             imageUrl:
-              'https://uppraisalconsultant.in/wp-content/uploads/2022/03/Untitled-2.png',
+              'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
           },
         },
         // More testimonials...
@@ -48,7 +50,7 @@ const featuredTestimonial = {
   
   export default function Testimonials() {
     return (
-      <div className="relative isolate bg-white pt-24 pb-32 sm:pt-24">
+      <div className="relative isolate bg-white py-12 sm:py-16">
         <div
         aria-hidden="true"
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-2xl sm:-top-80"
@@ -70,7 +72,7 @@ const featuredTestimonial = {
           </div>
           <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm/6 text-gray-900 sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
             <figure className="rounded-2xl bg-white ring-1 shadow-lg ring-gray-900/5 sm:col-span-2 xl:col-start-2 xl:row-end-1">
-              <blockquote className="p-6 text-lg font-semibold tracking-tight text-gray-900 sm:p-12 sm:text-xl/8">
+              <blockquote className="p-6 text-lg font-semibold italic tracking-tight text-gray-900 sm:p-12 sm:text-xl/8">
                 <p>{`“${featuredTestimonial.body}”`}</p>
               </blockquote>
               <figcaption className="flex flex-wrap items-center gap-x-4 gap-y-4 border-t border-gray-900/10 px-6 py-4 sm:flex-nowrap">
@@ -104,7 +106,7 @@ const featuredTestimonial = {
                         key={testimonial.author.handle}
                         className="rounded-2xl bg-white p-6 ring-1 shadow-lg ring-gray-900/5"
                       >
-                        <blockquote className="text-gray-900">
+                        <blockquote className="text-gray-900 italic">
                           <p>{`“${testimonial.body}”`}</p>
                         </blockquote>
                         <figcaption className="mt-6 flex items-center gap-x-4">

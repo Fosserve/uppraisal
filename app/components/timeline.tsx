@@ -29,7 +29,7 @@ const timeline = [
   
   export default function Timeline() {
     return (
-      <div className="bg-white py-24 sm:py-24">
+      <div className="bg-white py-12 sm:py-16">
         <div className="mx-auto max-w-2xl px-6 lg:px-8 lg:text-center">
           <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:text-balance">
           Our Process of Recruitment
