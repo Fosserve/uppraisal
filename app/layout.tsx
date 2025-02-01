@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Poppins } from "next/font/google"
-import Header from "./components/header";
 import FooterSection from "./components/footer";
 
 
@@ -36,7 +35,6 @@ export default function RootLayout({
         className={`${poppins.variable} bg-white  antialiased`}
       >
         <div>
-          <Header />
           <main>{children}</main>
           <FooterSection />
         </div>

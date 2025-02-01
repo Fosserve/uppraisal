@@ -6,10 +6,12 @@ import TeamSection from "./components/team_section";
 import LogoCloud from "./components/logoCloud";
 import Faqs from "./components/faqs";
 import Timeline from "./components/timeline";
+import Header from "./components/header";
 
 export default function Home() {
   return (
     <>
+    <Header />
     <HeroSection/>
     <FeaturesSection/>
     <Timeline />
