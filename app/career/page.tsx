@@ -148,7 +148,7 @@ export default function Timeline() {
       </div>
     </div>
 
-      <div className="mx-auto max-w-2xl px-8 lg:px-6 lg:text-center mt-36">
+      <div className="mx-auto max-w-2xl px-8 lg:px-6 lg:text-center mt-24">
         <p className="text-base/7 font-semibold text-indigo-600">
           how we filter
         </p>
@@ -192,10 +192,11 @@ export default function Timeline() {
           ))}
         </div>
       </div>
-      <div className="mx-auto bg-gray-800 py-12 flex max-w-2xl flex-col gap-16 max-w-7xl sm:px-6 lg:px-8 py-16 ring-1 ring-white/10 sm:rounded-3xl sm:p-8 lg:mx-0 lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20">
+      <div className="flex justify-center mt-24">
+      <div className="mx-auto bg-gray-800 py-12 px-6 flex max-w-2xl flex-col gap-16 max-w-7xl sm:px-6 lg:px-8 py-16 ring-1 ring-white/10 sm:rounded-3xl sm:p-8 lg:mx-0 lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20">
             <img
-              alt=""
-              src="https://images.unsplash.com/photo-1519338381761-c7523edc1f46?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+              alt="Career page"
+              src="https://img.freepik.com/free-vector/job-interview-conversation_74855-7566.jpg?t=st=1738560047~exp=1738563647~hmac=ae577d3b4a28c5c160b42fbcb8e79e1bf4e07a4e18c2a55597a05809eb0c89a9&w=1060"
               className="h-96 w-full flex-none rounded-2xl object-cover shadow-xl lg:aspect-square lg:h-auto lg:max-w-sm"
             />
             <div className="w-full flex-auto">
@@ -203,8 +204,7 @@ export default function Timeline() {
                 Join our team
               </h2>
               <p className="mt-6 text-lg/8 text-pretty text-gray-300">
-                Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in
-                accusamus quisquam.
+              How do you create remarkable change? By hiring, celebrating and nurturing the best people-from all walks of life.
               </p>
               <ul role="list" className="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base/7 text-white sm:grid-cols-2">
                 {benefits.map((benefit) => (
@@ -232,6 +232,7 @@ export default function Timeline() {
             }}
             className="aspect-1318/752 w-[82.375rem] flex-none bg-linear-to-r from-[#80caff] to-[#4f46e5] opacity-25"
           />
+        </div>
         </div>
     </div>
   );
