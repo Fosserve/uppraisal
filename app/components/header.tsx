@@ -8,7 +8,7 @@ import logo from "../../public/uppraisal-logo.png"
 
 const navigation = [
   { name: 'About Us', href: '/aboutus' },
-  { name: 'Career', href: '/career' },
+  { name: 'Careers', href: '/careers' },
   { name: 'Our Services', href: '/services' },
 ]
 

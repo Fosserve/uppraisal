@@ -130,7 +130,7 @@ export default function FooterSection() {
                   className="text-sm/6 text-gray-400 flex hover:text-white"
                 >
                   <EnvelopeIcon className="h-5 w-5 mr-2" />
-                  <span>uppraisalconsultant@gmail.com</span>
+                  <span>hr@uppraisalconsultant.in</span>
                 </a>
               </li>
               <li>

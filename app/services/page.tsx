@@ -3,8 +3,6 @@ import { HomeIcon } from '@heroicons/react/20/solid'
 import logo from "../../public/uppraisal-logo.png"
 
 const pages = [
-  { name: 'About Us', href: '/aboutus', current: false },
-  { name: 'Careers', href: '/career', current: false },
   { name: 'Our Services', href: '/services', current: false },
 ]
 
