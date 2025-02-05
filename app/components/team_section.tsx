@@ -1,17 +1,17 @@
 const people = [
     {
-      name: 'Alex Johnson',
-      role: "Lead Designer",
+      name: 'Sukanya Guha Das',
+      role: "Managing Patner",
       imageUrl:
-        'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-      bio: 'Alex has 10 years of experience in UI/UX design and is passionate about creating user-friendly designs.',
+        'sukanya.jpg',
+      bio: 'Sukanya is our HR and business consultant with experience of 10+ years in the industry',
     },
     {
-        name: 'Taylor Smith',
-        role: "Project Manager",
+        name: 'Jolly Chakraborty',
+        role: "Managing Director",
         imageUrl:
           'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-        bio: 'Taylor specializes in agile methodologies and has successfully led numerous teams to project success.',
+        bio: 'Jolly is managing Director of the company with 15+ years of experience',
       },
     // More people...
   ]
@@ -35,7 +35,7 @@ const people = [
           >
             {people.map((person) => (
               <li key={person.name} className="flex flex-col gap-6 xl:flex-row">
-                <img alt={person.name} src={person.imageUrl} className="aspect-4/5 w-52 flex-none rounded-2xl object-cover" />
+                <img alt={person.name} src={person.imageUrl} className="aspect-4/5 w-52 flex-none rounded-full object-cover" />
                 <div className="flex-auto">
                   <h3 className="text-lg/8 font-semibold tracking-tight text-gray-900">{person.name}</h3>
                   <p className="text-base/7 text-gray-600">{person.role}</p>

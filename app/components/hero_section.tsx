@@ -47,7 +47,7 @@ export default function HeroSection() {
               <div className="mx-auto max-w-2xl  gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div className="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
                   <h1 className="text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl">
-                  Get ready to enrich your Career with uupraisal consultant
+                  Elevate Your Business with Expert Consulting Solutions
                   </h1>
                   <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:max-w-md sm:text-xl/8 lg:max-w-none">
                   Discover what sets us apart. Our process, expertise, and commitment ensure success for both companies and candidates.Partnering with us brings distinct advantages, making the recruitment process seamless and effective.
