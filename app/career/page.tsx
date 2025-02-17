@@ -6,6 +6,8 @@ import { Field, Label, Switch } from "@headlessui/react";
 import { HomeIcon } from '@heroicons/react/20/solid'
 import { CheckCircleIcon } from '@heroicons/react/20/solid'
 import logo from "../../public/uppraisal-logo.png"
+import image1 from "../../public/team/img9.jpg"
+
 
 const pages = [
   { name: 'About Us', href: '/aboutus', current: false },
@@ -196,7 +198,7 @@ export default function Timeline() {
       <div className="mx-auto bg-gray-800 py-12 px-6 flex max-w-2xl flex-col gap-16 max-w-7xl sm:px-6 lg:px-8 py-16 ring-1 ring-white/10 sm:rounded-3xl sm:p-8 lg:mx-0 lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20">
             <img
               alt="Career page"
-              src="https://img.freepik.com/free-vector/job-interview-conversation_74855-7566.jpg?t=st=1738560047~exp=1738563647~hmac=ae577d3b4a28c5c160b42fbcb8e79e1bf4e07a4e18c2a55597a05809eb0c89a9&w=1060"
+              src={image1.src}
               className="h-96 w-full flex-none rounded-2xl object-cover shadow-xl lg:aspect-square lg:h-auto lg:max-w-sm"
             />
             <div className="w-full flex-auto">

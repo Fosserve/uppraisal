@@ -91,7 +91,7 @@ export default function Example() {
                     <h1 className="mt-2 text-lg font-semibold tracking-tight text-pretty text-gray-900 sm:text-xl">EXECUTIVE SEARCH</h1>
                     <p className="mt-6 text-md/7 sm:text-lg/8  text-balance text-gray-700">Our company provides search and solutions for clients requiring senior level executives and managers too. At our company, we understand the level of talent and expertise that senior executives and managers need to possess, and we ensure selection of such individuals in specific alignment with client requirements and their business objectives. We provide our clients with solutions for filling up important positions in their companies, which include CEO, CFO, COO, HRD, and CIO.</p>
                 </div>
-                <Image src="https://img.freepik.com/free-vector/search-recruits-by-professional-hr-manager-cartoon-woman-holding-magnifying-glass-check-information-choose-candidate-from-personnel-employees-resume-job-interview-isolated-white_575670-844.jpg?t=st=1737705928~exp=1737709528~hmac=3ba42ff6e75df0ba3a919ff578fe2ebba0b7ae319911c9a134bd012e1ee5c125&w=996" alt="Staffing Solutions" width={500} height={500}/>
+                <Image src="https://img.freepik.com/free-vector/search-concept-landing-page_52683-18573.jpg?t=st=1739777109~exp=1739780709~hmac=efd0ae708bac27686e91da2e58b14a6e3905fbab1c68e73a52c7e2c6561e1d6b&w=996" alt="Staffing Solutions" width={500} height={500}/>
             </div>
             <div className="flex flex-col lg:flex-row justify-between items-center">
                 <div className="max-w-2xl">

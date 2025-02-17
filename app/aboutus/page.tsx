@@ -7,6 +7,11 @@ import logo13 from "../../public/Clients_logos/ronak_optik_india_private_limited
 import logo14 from "../../public/Clients_logos/IFB.png";
 import { HomeIcon } from '@heroicons/react/20/solid'
 import logo from "../../public/uppraisal-logo.png"
+import image1 from "../../public/team/img7.jpg";
+import image2 from "../../public/team/img8.jpg";
+import image3 from "../../public/team/img6.jpg";
+import image4 from "../../public/team/img4.jpg";
+
 
 
 
@@ -143,7 +148,7 @@ export default function Example() {
               </div>
               <img
                 alt=""
-                src="https://images.unsplash.com/photo-1567532900872-f4e906cbf06a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1280&q=80"
+                src={image1.src}
                 className="mt-10 aspect-6/5 w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36"
               />
             </div>
@@ -266,7 +271,7 @@ Different Industries"
                 <div className="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
                   <img
                     alt=""
-                    src="https://images.unsplash.com/photo-1670272502246-768d249768ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1152&q=80"
+                    src={image2.src}
                     className="aspect-7/5 w-[37rem] max-w-none rounded-2xl bg-gray-50 object-cover"
                   />
                 </div>
@@ -274,8 +279,8 @@ Different Industries"
                   <div className="order-first flex w-64 flex-none justify-end self-end lg:w-auto">
                     <img
                       alt=""
-                      src="https://images.unsplash.com/photo-1605656816944-971cd5c1407f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=768&h=604&q=80"
-                      className="aspect-4/3 w-[24rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
+                      src={image4.src}
+                      className="aspect-4/3 w-[24rem] h-[16rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
                     />
                   </div>
                   <div className="flex w-96 flex-auto justify-end lg:w-auto lg:flex-none">
@@ -288,8 +293,8 @@ Different Industries"
                   <div className="hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none">
                     <img
                       alt=""
-                      src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=768&h=604&q=80"
-                      className="aspect-4/3 w-[24rem] max-w-none rounded-2xl bg-gray-50 object-cover"
+                      src={image3.src}
+                      className="aspect-4/3 w-[24rem] h-[20rem] max-w-none rounded-2xl bg-gray-50 object-cover"
                     />
                   </div>
                 </div>

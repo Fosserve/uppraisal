@@ -1,19 +1,20 @@
+import image1 from "../../public/team/image1.jpg";
+import image2 from "../../public/team/image2.jpg";
+
+
 const people = [
-    {
-      name: 'Alex Johnson',
-      role: "Lead Designer",
-      imageUrl:
-        'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-      bio: 'Alex has 10 years of experience in UI/UX design and is passionate about creating user-friendly designs.',
-    },
-    {
-        name: 'Taylor Smith',
-        role: "Project Manager",
-        imageUrl:
-          'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-        bio: 'Taylor specializes in agile methodologies and has successfully led numerous teams to project success.',
-      },
-    // More people...
+  {
+    name: 'Jolly Chakraborty',
+    role: 'Founder & Director',
+    imageUrl: image1.src,
+    bio: 'Jolly Chakraborty passed PGPRP from IISWBM Kolkata. She has extensive experience in the Manufacturing and Recruitment industry, specializing in HR & Administration, Recruitment, and Training Development. She has been running Uppraisal Consultant since 2015, overseeing client relations, team management, and business administration.',
+  },
+  {
+    name: 'Sukanya Guha Das',
+    role: 'Co-Founder & HR Head',
+    imageUrl:image2.src,
+    bio: 'Sukanya Guha Das holds an MBA in HR from EIM Kolkata. She has extensive experience in the Software, Hospitality, and Recruitment industries, specializing in HR & Administration, Recruitment, and Training Development. She has been running Uppraisal Consultant since 2015, managing client relations, team operations, and business administration.',
+  }
   ]
   
   export default function TeamSection() {
