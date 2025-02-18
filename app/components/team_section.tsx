@@ -1,19 +1,20 @@
+import image1 from "../../public/team/image1.jpg";
+import image2 from "../../public/team/image2.jpg";
+
+
 const people = [
-    {
-      name: 'Sukanya Guha Das',
-      role: "Managing Patner",
-      imageUrl:
-        'sukanya.jpg',
-      bio: 'Sukanya is our HR and business consultant with experience of 10+ years in the industry',
-    },
-    {
-        name: 'Jolly Chakraborty',
-        role: "Managing Director",
-        imageUrl:
-          'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-        bio: 'Jolly is managing Director of the company with 15+ years of experience',
-      },
-    // More people...
+  {
+    name: 'Jolly Chakraborty',
+    role: 'Founder & Director',
+    imageUrl: image1.src,
+    bio: 'Jolly Chakraborty passed PGPRP from IISWBM Kolkata. She has extensive experience in the Manufacturing and Recruitment industry, specializing in HR & Administration, Recruitment, and Training Development. She has been running Uppraisal Consultant since 2015, overseeing client relations, team management, and business administration.',
+  },
+  {
+    name: 'Sukanya Guha Das',
+    role: 'Co-Founder & HR Head',
+    imageUrl:image2.src,
+    bio: 'Sukanya Guha Das holds an MBA in HR from EIM Kolkata. She has extensive experience in the Software, Hospitality, and Recruitment industries, specializing in HR & Administration, Recruitment, and Training Development. She has been running Uppraisal Consultant since 2015, managing client relations, team operations, and business administration.',
+  }
   ]
   
   export default function TeamSection() {
