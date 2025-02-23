@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 import logo1 from "../../public/Clients_logos/Kutchina.jpg";
 import logo2 from "../../public/Clients_logos/JSS.jpg";
@@ -19,7 +19,7 @@ import logo14 from "../../public/Clients_logos/IFB.png";
 
 interface Logo {
   name: string;
-  url: string;
+  url: StaticImageData;
 }
 
 const logos: Logo[] = [
