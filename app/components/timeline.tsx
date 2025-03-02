@@ -43,7 +43,7 @@ const timeline = [
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-4">
             {timeline.map((item) => (
               <div key={item.name}>
-                <time dateTime={item.dateTime} className="flex items-center text-sm/6 font-semibold text-indigo-600">
+                <time dateTime={item.dateTime} className="flex items-center text-sm/6 font-semibold text-[#035de5]">
                   <svg viewBox="0 0 4 4" aria-hidden="true" className="mr-4 size-1 flex-none">
                     <circle r={2} cx={2} cy={2} fill="currentColor" />
                   </svg>
