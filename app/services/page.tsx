@@ -3,8 +3,11 @@ import { HomeIcon } from '@heroicons/react/20/solid'
 import logo from "../../public/uppraisal-logo.png"
 
 const pages = [
-  { name: 'Our Services', href: '/services', current: false },
+  { name: 'About', href: '/aboutus', current: false },
+  { name: 'Careers', href: '/career', current: false },
+  { name: 'Services', href: '/services', current: false },
 ]
+
 const servicesdata = [
   {
     title: "PERMANENT STAFFING SOLUTION",
@@ -42,6 +45,7 @@ const servicesdata = [
       "https://img.freepik.com/free-vector/contract-conclusion-concept-illustration_107791-81.jpg?t=st=1737701405~exp=1737705005~hmac=8161ff5a75296daf1e44b0fd3c9b32879a8f72d3f43471d81b1feea3bc916fc9&w=826",
   },
 ]
+
 export default function Example() {
     return (
       <div className="overflow-hidden bg-white">
@@ -58,7 +62,7 @@ export default function Example() {
             </a>
           </div>
           <div className="flex mt-8">
-                <ol role="list" className="flex items-center space-x-4">
+                <ol role="list" className="flex items-center flex-wrap space-x-4 overflow-x-auto">
                   <li>
                     <div>
                       <a href="/" className="text-gray-700 hover:text-gray-800">
@@ -69,7 +73,7 @@ export default function Example() {
                   </li>
                   {pages.map((page) => (
                     <li key={page.name}>
-                      <div className="flex items-center">
+                      <div className="flex items-center ">
                         <svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" className="size-5 shrink-0 text-gray-300">
                           <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
                         </svg>
@@ -90,11 +94,11 @@ export default function Example() {
         <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl  lg:px-8 mt-24">
           
           <div className="text-center pt-24 sm:pt-32">
-            <p className="text-base/7 font-semibold text-indigo-600">what we do</p>
-            <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
+            <p className="text-lg font-semibold text-[#035de5]">what we do</p>
+            <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Our Areas Of Expertise
             </h1>
-            <p className="mt-6 text-xl/8 text-balance text-gray-700">
+            <p className="mx-auto mt-5 max-w-prose text-lg/8 text-gray-600">
             We conduct extensive search for quality candidates based on our client preferences and requirements for filling up various positions in their companies.
             </p>
           </div>
@@ -107,7 +111,7 @@ export default function Example() {
                 } justify-between items-center`}
               >
                 <div className="max-w-2xl">
-                  <h1 className="mt-2 text-lg font-bold italic tracking-tight text-pretty text-gray-900 sm:text-xl">
+                  <h1 className="mt-2 text-lg font-semibold tracking-tight text-pretty text-gray-900 sm:text-xl">
                     {service.title}
                   </h1>
                   <p className="mt-6 font-sans text-balance text-gray-700">
@@ -143,4 +147,3 @@ export default function Example() {
       </div>
     )
   }
-  

@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/16/solid";
-import { Field, Label, Switch } from "@headlessui/react";
 import { HomeIcon } from '@heroicons/react/20/solid'
 import { CheckCircleIcon } from '@heroicons/react/20/solid'
 import logo from "../../public/uppraisal-logo.png"
@@ -96,14 +95,12 @@ export default function Timeline() {
                 </div>
         </nav>
       </header>
-      {/* {Hero Section} */}
-
       <div className="relative mt-32 mx-auto max-w-7xl sm:mt-40 sm:px-6 rounded-md lg:px-8 bg-gray-900">
-      <div className="relative h-80 overflow-hidden bg-indigo-600 md:absolute md:left-0 md:h-full md:w-1/3 rounded md lg:w-1/2">
+      <div className="relative h-80 overflow-hidden bg-[#4bbcff] md:absolute md:left-0 md:h-full md:w-1/3 rounded md lg:w-1/2">
         <img
           alt=""
           src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&blend=6366F1&sat=-100&blend-mode=multiply"
-          className="size-full object-cover rounded-md"
+          className="size-full object-cover rounded-md mix-blend-multiply"
         />
         <svg
           viewBox="0 0 926 676"
@@ -132,14 +129,14 @@ export default function Timeline() {
       </div>
       <div className="relative mx-auto max-w-7xl py-24 sm:py-32 lg:px-8 lg:py-40">
         <div className="pr-6 pl-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pr-0 lg:pl-24 xl:pl-32">
-          <h2 className="text-base/7 font-semibold text-indigo-400">Grow With Us – Your Future Starts Here</h2>
+          <h2 className="text-base/7 font-semibold text-[#4bbcff]">Grow With Us – Your Future Starts Here</h2>
           <p className="mt-2 text-4xl font-semibold tracking-tight text-white sm:text-5xl">We’re here to help</p>
           <p className="mt-6 text-base/7 text-gray-300">
           We’re looking for passionate individuals at every stage of their careers—freshers eager to learn, experienced professionals ready to lead, and trained experts seeking new challenges. Join us to shape the future while advancing your own. Explore opportunities that match your skills and ambitions!
           </p>
           <div className="mt-8">
             <a
-              href="#"
+              href="http://careers.uppraisalconsultant.in"
               className="inline-flex rounded-md bg-white/10 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               Visit our Job Portal
@@ -150,7 +147,7 @@ export default function Timeline() {
     </div>
 
       <div className="mx-auto max-w-2xl px-8 lg:px-6 lg:text-center mt-24">
-        <p className="text-base/7 font-semibold text-indigo-600">
+        <p className="text-base/7 font-semibold text-[#0a7aff]">
           how we filter
         </p>
         <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:text-balance">
@@ -168,7 +165,7 @@ export default function Timeline() {
             <div key={item.name}>
               <time
                 dateTime={item.dateTime}
-                className="flex items-center text-sm/6 font-semibold text-indigo-600"
+                className="flex items-center text-sm/6 font-semibold text-[#0a7aff]"
               >
                 <svg
                   viewBox="0 0 4 4"
@@ -216,7 +213,7 @@ export default function Timeline() {
                 ))}
               </ul>
               <div className="mt-10 flex">
-                <a href="#" className="text-sm/6 font-semibold text-indigo-400">
+                <a href="http://careers.uppraisalconsultant.in" className="text-sm/6 font-semibold text-[#0a7aff]">
                   See our job postings <span aria-hidden="true">&rarr;</span>
                 </a>
               </div>
