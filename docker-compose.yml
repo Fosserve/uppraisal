@@ -14,8 +14,8 @@ services:
       - /app/.next
     ports:
       - "3000:3000"
-    env_file:
-      - .env.local
+    networks:
+      - web
   prod:
     build:
       context: .
@@ -23,8 +23,12 @@ services:
     container_name: uppraisal
     ports:
       - "3000:3000"
-    env_file:
-      - .env
+    networks:
+      - web
 
 volumes:
   node_modules:
+
+networks:
+  web:
+    external: true

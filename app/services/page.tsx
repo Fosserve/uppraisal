@@ -103,19 +103,45 @@ export default function Example() {
             </p>
           </div>
           <div className="mt-20 flex flex-col gap-16">
-            {servicesdata.map((service, index) => (
-              <div key={index} className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} justify-between items-center`}>
+            {servicesdata && servicesdata.map((service, index) => (
+              <div
+                key={index}
+                className={`flex flex-col ${
+                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                } justify-between items-center`}
+              >
                 <div className="max-w-2xl">
                   <h1 className="mt-2 text-lg font-semibold tracking-tight text-pretty text-gray-900 sm:text-xl">
                     {service.title}
                   </h1>
-                  <p className="mt-6 text-md/7 sm:text-lg/8 text-balance text-gray-700">
+                  <p className="mt-6 font-sans text-balance text-gray-700">
                     {service.description}
                   </p>
                 </div>
-                <Image src={service.imageUrl} alt="Staffing Solutions" width={500} height={500}/>
+                <Image src="https://img.freepik.com/free-vector/accountant-concept-professional-bookkeeper-tax-calculating-financial-analysis-business-character-making-financial-operation-vector-illustration_613284-1046.jpg?t=st=1737706222~exp=1737709822~hmac=127f5aad41a0c0fdcd29eb9183e1b11f5bbb76138d0fe8ec6f78b6d3926c84a2&w=900" alt="Staffing Solutions" width={500} height={500}/>
               </div>
             ))}
+            <div className="flex flex-col lg:flex-row justify-between items-center">
+              <div className="max-w-2xl">
+                <h1 className="mt-2 text-lg font-semibold tracking-tight text-pretty text-gray-900 sm:text-xl">TRAINING & DEVELOPMENT</h1>
+                <p className="mt-6 text-md/7 sm:text-lg/8 text-balance text-gray-700">Training & Development improve the effectiveness of any organization and the employees working in those organization. We offer on job soft skill & motivational training, Interactive sessions, Activity Based Training for your employees Best of HR professionals in the industry will impart the training which will eventually lift up your team's moral.</p>
+              </div>
+              <Image src="https://img.freepik.com/free-vector/female-student-presenting-report-graph-class-cartoon-person-presents-report-school_24797-1556.jpg?t=st=1737706005~exp=1737709605~hmac=7f02e76a19218417c45aa3280c5393d498d48a8472bb49e3b76574e97d774636&w=826" alt="Staffing Solutions" width={500} height={500}/>
+            </div>
+            <div className="flex flex-col lg:flex-row-reverse justify-between items-center">
+              <div className="max-w-2xl">
+                <h1 className="mt-2 text-lg font-semibold tracking-tight text-pretty text-gray-900 sm:text-xl">EXECUTIVE SEARCH</h1>
+                <p className="mt-6 text-md/7 sm:text-lg/8 text-balance text-gray-700">Our company provides search and solutions for clients requiring senior level executives and managers too. At our company, we understand the level of talent and expertise that senior executives and managers need to possess, and we ensure selection of such individuals in specific alignment with client requirements and their business objectives. We provide our clients with solutions for filling up important positions in their companies, which include CEO, CFO, COO, HRD, and CIO.</p>
+              </div>
+              <Image src="https://img.freepik.com/free-vector/search-concept-landing-page_52683-18573.jpg?t=st=1739777109~exp=1739780709~hmac=efd0ae708bac27686e91da2e58b14a6e3905fbab1c68e73a52c7e2c6561e1d6b&w=996" alt="Staffing Solutions" width={500} height={500}/>
+            </div>
+            <div className="flex flex-col lg:flex-row justify-between items-center">
+              <div className="max-w-2xl">
+                <h1 className="mt-2 text-lg font-semibold tracking-tight text-pretty text-gray-900 sm:text-xl">TEMPORARY STAFFING</h1>
+                <p className="mt-6 text-md/7 sm:text-lg/8 text-balance text-gray-700">We also provide temporary staffing services. We understand the need for businesses to have temporary employees with required skills and talents, and we conduct our search and selection accordingly matching such temporary employment requirements to enable right fit for your company.</p>
+              </div>
+              <Image src="https://img.freepik.com/free-vector/contract-conclusion-concept-illustration_107791-81.jpg?t=st=1737701405~exp=1737705005~hmac=8161ff5a75296daf1e44b0fd3c9b32879a8f72d3f43471d81b1feea3bc916fc9&w=826" alt="Staffing Solutions" width={500} height={500}/>
+            </div>
           </div>
         </div>
       </div>
