@@ -3,9 +3,9 @@ import { HomeIcon } from '@heroicons/react/20/solid'
 import logo from "../../public/uppraisal-logo.png"
 
 const pages = [
-  { name: 'About Us', href: '/aboutus', current: false },
+  { name: 'About', href: '/aboutus', current: false },
   { name: 'Careers', href: '/career', current: false },
-  { name: 'Our Services', href: '/services', current: false },
+  { name: 'Services', href: '/services', current: false },
 ]
 
 export default function Example() {
@@ -24,7 +24,7 @@ export default function Example() {
             </a>
           </div>
           <div className="flex mt-8">
-                <ol role="list" className="flex items-center space-x-4">
+                <ol role="list" className="flex items-center flex-wrap space-x-4 overflow-x-auto">
                   <li>
                     <div>
                       <a href="/" className="text-gray-700 hover:text-gray-800">
@@ -35,7 +35,7 @@ export default function Example() {
                   </li>
                   {pages.map((page) => (
                     <li key={page.name}>
-                      <div className="flex items-center">
+                      <div className="flex items-center ">
                         <svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" className="size-5 shrink-0 text-gray-300">
                           <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
                         </svg>
@@ -56,11 +56,11 @@ export default function Example() {
         <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl mt-12 lg:px-8 mt-24">
           
           <div className="text-center pt-24 sm:pt-32">
-            <p className="text-base/7 font-semibold text-indigo-600">what we do</p>
-            <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
+            <p className="text-lg font-semibold text-[#035de5]">what we do</p>
+            <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Our Areas Of Expertise
             </h1>
-            <p className="mt-6 text-xl/8 text-balance text-gray-700">
+            <p className="mx-auto mt-5 max-w-prose text-lg/8 text-gray-600">
             We conduct extensive search for quality candidates based on our client preferences and requirements for filling up various positions in their companies.
             </p>
           </div>
@@ -68,7 +68,7 @@ export default function Example() {
             <div className="flex flex-col lg:flex-row justify-between items-center">
             <div className="max-w-2xl">
                     <h1 className="mt-2 text-lg font-semibold tracking-tight text-pretty text-gray-900 sm:text-xl">PERMANENT STAFFING SOLUTION (PSS)</h1>
-                    <p className="mt-6 ttext-md/7 sm:text-lg/8 text-balance text-gray-700">We conduct extensive search for quality candidates based on our client preferences and requirements for filling up various positions in their companies. We make sure to select candidates who are best fit for our clients and hence have long-term employment associations. We consider essential factors related to candidates’ background, previous work experiences, salaries, performances, cultural resonance, and match them accordingly with required job profiles.</p>
+                    <p className="mt-6 text-md/7 sm:text-lg/8 text-balance text-gray-700">We conduct extensive search for quality candidates based on our client preferences and requirements for filling up various positions in their companies. We make sure to select candidates who are best fit for our clients and hence have long-term employment associations. We consider essential factors related to candidates’ background, previous work experiences, salaries, performances, cultural resonance, and match them accordingly with required job profiles.</p>
                 </div>
                 <Image src="https://img.freepik.com/free-vector/recruit-agent-analyzing-candidates_74855-4565.jpg?t=st=1737700253~exp=1737703853~hmac=5344e6925f6c82b250612917197368695e9b9388c74926f65832a24ea3d02701&w=1060" alt="Staffing Solutions" width={500} height={500}/>
             </div>
@@ -91,7 +91,7 @@ export default function Example() {
                     <h1 className="mt-2 text-lg font-semibold tracking-tight text-pretty text-gray-900 sm:text-xl">EXECUTIVE SEARCH</h1>
                     <p className="mt-6 text-md/7 sm:text-lg/8  text-balance text-gray-700">Our company provides search and solutions for clients requiring senior level executives and managers too. At our company, we understand the level of talent and expertise that senior executives and managers need to possess, and we ensure selection of such individuals in specific alignment with client requirements and their business objectives. We provide our clients with solutions for filling up important positions in their companies, which include CEO, CFO, COO, HRD, and CIO.</p>
                 </div>
-                <Image src="https://img.freepik.com/free-vector/search-concept-landing-page_52683-18573.jpg?t=st=1739777109~exp=1739780709~hmac=efd0ae708bac27686e91da2e58b14a6e3905fbab1c68e73a52c7e2c6561e1d6b&w=996" alt="Staffing Solutions" width={500} height={500}/>
+                <Image src="https://img.freepik.com/free-vector/people-talking-isometric-ai-robot_74855-1741.jpg?t=st=1740910379~exp=1740913979~hmac=88684fa16f9ec0cdc6277ad402b40de9541c2af06f3d2d95b62ed9811af359e6&w=1380" alt="Staffing Solutions" width={500} height={500}/>
             </div>
             <div className="flex flex-col lg:flex-row justify-between items-center">
                 <div className="max-w-2xl">

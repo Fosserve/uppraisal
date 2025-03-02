@@ -128,15 +128,15 @@ export default function Example() {
         <div className="relative isolate -z-10 overflow-hidden bg-linear-to-b from-indigo-100/20">
           <div
             aria-hidden="true"
-            className="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white ring-1 shadow-xl shadow-indigo-600/10 ring-indigo-50 sm:-mr-80 lg:-mr-96"
+            className="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white ring-1 shadow-xl shadow-[#035de5]/10 ring-[#edf8ff] sm:-mr-80 lg:-mr-96"
           />
           <div className="mx-auto max-w-7xl px-6 py-12 sm:-py16 lg:px-8">
             <div className="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-8 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
               {/* <h1 class="max-w-2xl text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl lg:col-span-2 xl:col-auto">We’re changing the way people connect</h1> */}
-              <h1 className="max-w-2xl text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl lg:col-span-2 xl:col-auto">
+              <h1 className="max-w-2xl text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl lg:col-span-2 xl:col-auto">
               Leading HR Solutions in Eastern India Since 2015              </h1>
               <div className="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
-                <p className="text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
+                <p className="text-lg mx-auto font-medium  text-pretty text-gray-500 sm:text-xl/8">
                   We, the UPPRAISAL CONSULTANT have already been considered as
                   one of the leading consultants in Eastern zone, specifically
                   in Kolkata since - 2015 UPPRAISAL CONSULTANT tries to serve a
@@ -149,7 +149,7 @@ export default function Example() {
               <img
                 alt=""
                 src={image1.src}
-                className="mt-10 aspect-6/5 w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36"
+                className="mt-10 aspect-6/5 w-full mx-auto max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-16"
               />
             </div>
           </div>
@@ -163,7 +163,7 @@ export default function Example() {
               <div key={item.name}>
                 <time
                   dateTime={item.dateTime}
-                  className="flex items-center text-sm/6 font-semibold text-indigo-600"
+                  className="flex items-center text-sm/6 font-semibold text-[#035de5]"
                 >
                   <svg
                     viewBox="0 0 4 4"
@@ -339,7 +339,7 @@ Different Industries"
                 </p>
               </div>
             </div>
-            <div className="flex flex-col-reverse justify-between gap-x-16 gap-y-8 rounded-2xl bg-indigo-600 p-8 sm:w-11/12 sm:max-w-xl sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-none lg:flex-auto lg:flex-col lg:items-start lg:gap-y-28">
+            <div className="flex flex-col-reverse justify-between gap-x-16 gap-y-8 rounded-2xl bg-[#035de5] p-8 sm:w-11/12 sm:max-w-xl sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-none lg:flex-auto lg:flex-col lg:items-start lg:gap-y-28">
               <p className="flex-none text-3xl font-bold tracking-tight text-white">
                 15+
               </p>
@@ -347,11 +347,8 @@ Different Industries"
                 <p className="text-lg font-semibold tracking-tight text-white">
                 Flexible, Customized Services
                 </p>
-                <p className="mt-2 text-base/7 text-indigo-200">
+                <p className="mt-2 text-base/7 text-[#b6e4ff]">
                 We adapt our offerings to align with your evolving requirements, ensuring our solutions remain relevant and effective.
-
-
-
                 </p>
               </div>
             </div>
