@@ -36,11 +36,7 @@ const people = [
           >
             {people.map((person) => (
               <li key={person.name} className="flex flex-col gap-6 xl:flex-row">
-<<<<<<< HEAD
-                <img alt={person.name} src={person.imageUrl} className="aspect-4/5 w-52 flex-none rounded-full object-cover" />
-=======
                 <img alt={person.name} src={person.imageUrl} className="mx-auto aspect-5/4 size-56 rounded-full object-cover" />
->>>>>>> 068afedd1880266d4b8ed811b2e002e7ee5cda7d
                 <div className="flex-auto">
                   <h3 className="text-lg/8 font-semibold tracking-tight text-gray-900">{person.name}</h3>
                   <p className="text-base/7 text-gray-600">{person.role}</p>

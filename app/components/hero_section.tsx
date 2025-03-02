@@ -3,13 +3,9 @@ import image7 from "../../public/team/img7.jpg";
 import image4 from "../../public/team/img2.jpg";
 import image3 from "../../public/team/img5.jpg";
 import image2 from "../../public/team/image1.jpg";
-
-
-
-
+import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
-
   return (
     <div className="bg-white">
       <main>
@@ -47,33 +43,25 @@ export default function HeroSection() {
                 clipPath:
                   'polygon(63.1% 29.5%, 100% 17.1%, 76.6% 3%, 48.4% 0%, 44.6% 4.7%, 54.5% 25.3%, 59.8% 49%, 55.2% 57.8%, 44.4% 57.2%, 27.8% 47.9%, 35.1% 81.5%, 0% 97.7%, 39.2% 100%, 35.2% 81.4%, 97.2% 52.8%, 63.1% 29.5%)',
               }}
-              className="aspect-801/1036 w-[50.0625rem] bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
+              className="aspect-801/1036 w-[50.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
             />
           </div>
           <div className="overflow-hidden">
             <div className="mx-auto max-w-7xl px-6 pt-36 pb-32 sm:pt-60 lg:px-8 lg:pt-32">
-              <div className="mx-auto max-w-2xl  gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
+              <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div className="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
                   <h1 className="text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl">
-                  Elevate Your Business with Expert Consulting Solutions
+                    Elevate Your Business with Expert Consulting Solutions
                   </h1>
-                  <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:max-w-md sm:text-xl/8 lg:max-w-none">
-                  Discover what sets us apart. Our process, expertise, and commitment ensure success for both companies and candidates.Partnering with us brings distinct advantages, making the recruitment process seamless and effective.
+                  <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:max-w-md sm:text-xl lg:max-w-none">
+                    Discover what sets us apart. Our process, expertise, and commitment ensure success for both companies and candidates. Partnering with us brings distinct advantages, making the recruitment process seamless and effective.
                   </p>
-                  <div className="mt-10 flex items-center gap-x-6">
+                  <div className="mt-10 flex flex-col sm:flex-row sm:items-center sm:space-x-4">
                     <a
-<<<<<<< HEAD
-                      href="#"
-                      className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 flex items-center"
-=======
-                      href="http://careers.uppraisalconsultant.in"
-                      className="rounded-md bg-[#035de5] px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-[#219aff] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#035de5]"
->>>>>>> 068afedd1880266d4b8ed811b2e002e7ee5cda7d
+                      href="http://careers.uppraisalconsultant.in" target="_blank"
+                      className="rounded-lg bg-[#035de5] px-6 py-3 text-lg font-semibold text-white shadow-md transition duration-300 ease-in-out hover:bg-[#219aff] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#035de5]"
                     >
-                      Explore opportunities
-                      <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"></path>
-                      </svg>
+                      Explore opportunities →
                     </a>
                   </div>
                 </div>
@@ -131,5 +119,5 @@ export default function HeroSection() {
         </div>
       </main>
     </div>
-  )
+  );
 }
