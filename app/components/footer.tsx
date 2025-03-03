@@ -20,7 +20,7 @@ interface SocialItem extends NavigationItem {
 const navigation = {
   main: [
     { name: "Home", href: "/" },
-    { name: "About Us", href: "/aboutus" },
+    { name: "About Us", href: "/about-us" },
     { name: "Career", href: "/career" },
     { name: "Our Services", href: "/services" },
   ] as NavigationItem[],
