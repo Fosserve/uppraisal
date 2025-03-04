@@ -73,7 +73,7 @@ const Values = [
 ];
 
 const pages = [
-  { name: 'About Us', href: '/aboutus', current: false },
+  { name: 'About Us', href: '/about-us', current: false },
 ]
 
 
