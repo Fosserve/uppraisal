@@ -9,6 +9,8 @@ const navigation = [
   { name: 'About Us', href: '/about-us' },
   { name: 'Careers', href: '/careers' },
   { name: 'Our Services', href: '/services' },
+  { name: 'Gallery', href: '/Gallery' },
+
 ]
 
 const Header = () => {

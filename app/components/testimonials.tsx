@@ -5,9 +5,6 @@ const featuredTestimonial = {
     author: {
       name: 'N Chakravarti',
       handle: 'Chakravarti',
-      imageUrl:
-        'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-      logoUrl: logo1.src,
     },
   }
   const testimonials = [
@@ -18,11 +15,9 @@ const featuredTestimonial = {
           author: {
             name: 'KAUSHIK SINHA',
             handle: 'kaushik',
-            imageUrl:
-              'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
+           
           },
         },
-        // More testimonials...
       ],
      
     ],
@@ -33,12 +28,9 @@ const featuredTestimonial = {
 ,
           author: {
             name: 'Chayan Bhattacharjee',
-            handle: 'Bhattacharjee',
-            imageUrl:
-              'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
+            handle: 'Bhattacharjee', 
           },
         },
-        // More testimonials...
       ],
     
     ],
@@ -76,16 +68,10 @@ const featuredTestimonial = {
                 <p>{`“${featuredTestimonial.body}”`}</p>
               </blockquote>
               <figcaption className="flex flex-wrap items-center gap-x-4 gap-y-4 border-t border-gray-900/10 px-6 py-4 sm:flex-nowrap">
-                <img
-                  alt={featuredTestimonial.author.name}
-                  src={featuredTestimonial.author.imageUrl}
-                  className="size-10 flex-none rounded-full bg-gray-50"
-                />
                 <div className="flex-auto">
                   <div className="font-semibold">{featuredTestimonial.author.name}</div>
                   <div className="text-gray-600">{`@${featuredTestimonial.author.handle}`}</div>
                 </div>
-                <img alt="" src={featuredTestimonial.author.logoUrl} className="h-10 w-auto flex-none" />
               </figcaption>
             </figure>
             {testimonials.map((columnGroup, columnGroupIdx) => (
@@ -110,7 +96,6 @@ const featuredTestimonial = {
                           <p>{`“${testimonial.body}”`}</p>
                         </blockquote>
                         <figcaption className="mt-6 flex items-center gap-x-4">
-                          <img alt={testimonial.author.name} src={testimonial.author.imageUrl} className="size-10 rounded-full bg-gray-50" />
                           <div>
                             <div className="font-semibold">{testimonial.author.name}</div>
                             <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
