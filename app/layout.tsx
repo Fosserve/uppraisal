@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Poppins } from "next/font/google"
 import FooterSection from "./components/footer";
+import Header from "./components/header";
 
 
 const poppins = Poppins({
@@ -35,6 +36,7 @@ export default function RootLayout({
         className={`${poppins.variable} bg-white  antialiased`}
       >
         <div>
+          <Header />
           <main>{children}</main>
           <FooterSection />
         </div>
