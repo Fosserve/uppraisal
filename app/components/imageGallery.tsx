@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { Filter, Search } from "lucide-react"
+import { Search } from "lucide-react"
 import image1 from "../../public/team/image1.jpg"
 import image2 from "../../public/team/image2.jpg"
 import img1 from "../../public/team/img1.jpg"
@@ -15,8 +15,6 @@ import img7 from "../../public/team/img7.jpg"
 import img8 from "../../public/team/img8.jpg"
 import img9 from "../../public/team/img9.jpg"
 
-
-
 // Define the image data structure
 interface ImageItem {
   id: string
@@ -27,97 +25,19 @@ interface ImageItem {
   height: number
 }
 
-// Sample image data - in a real app, this could come from an API or data file
+// Sample image data
 const imageData: ImageItem[] = [
-  {
-    id: "1",
-    src:image1.src,
-    alt: "Close-up of a leaf with water droplets",
-    category: ["Nature", "Flora"],
-    width: 600,
-    height: 400,
-  },
-  {
-    id: "2",
-    src:image2.src,
-    alt: "Boats on a lake",
-    category: ["Nature"],
-    width: 600,
-    height: 400,
-  },
-  {
-    id: "3",
-    src: img1.src,
-    alt: "Colorful pencils",
-    category: ["Art"],
-    width: 600,
-    height: 400,
-  },
-  {
-    id: "4",
-    src: img2.src,
-    alt: "Fresh fruits including apple and strawberries",
-    category: ["Food"],
-    width: 600,
-    height: 400,
-  },
-  {
-    id: "5",
-    src: img3.src,
-    alt: "Tree in winter",
-    category: ["Nature"],
-    width: 600,
-    height: 400,
-  },
-  {
-    id: "6",
-    src: img4.src,
-    alt: "Tree with autumn foliage",
-    category: ["Nature"],
-    width: 600,
-    height: 400,
-  },
-  {
-    id: "7",
-    src: img5.src,
-    alt: "Silhouettes of buildings at sunset",
-    category: ["Architecture"],
-    width: 600,
-    height: 400,
-  },
-  {
-    id: "8",
-    src: img6.src,
-    alt: "Modern concrete building with person",
-    category: ["Architecture", "People"],
-    width: 600,
-    height: 400,
-  },
-  {
-    id: "9",
-    src: img7.src,
-    alt: "Temple architecture",
-    category: ["Architecture"],
-    width: 600,
-    height: 400,
-  },
-  {
-    id: "10",
-    src: img8.src,
-    alt: "Big Ben clock tower",
-    category: ["Architecture", "Landmarks"],
-    width: 600,
-    height: 400,
-  },
-  {
-    id: "11",
-    src: img9.src,
-    alt: "Red garage doors",
-    category: ["Architecture", "People"],
-    width: 600,
-    height: 400,
-  },
-
+  { id: "1", src: image1.src, alt: "Leaf with water droplets", category: ["Team"], width: 600, height: 400 },
+  { id: "2", src: image2.src, alt: "Boats on a lake", category: ["Team"], width: 600, height: 400 },
+  { id: "3", src: img1.src, alt: "Colorful pencils", category: ["Team"], width: 600, height: 400 },
+  { id: "4", src: img2.src, alt: "Fresh fruits", category: ["Group", "Celebration"], width: 600, height: 400 },
+  { id: "5", src: img3.src, alt: "Tree in winter", category: ["Celebration", "Gatherings"], width: 600, height: 400 },
+  { id: "6", src: img4.src, alt: "Tree in autumn", category: ["Celebration"], width: 600, height: 400 },
+  { id: "7", src: img5.src, alt: "City sunset", category: ["Group"], width: 600, height: 400 },
+  { id: "8", src: img6.src, alt: "Modern building", category: ["Gatherings", "Celebration"], width: 600, height: 400 },
+  { id: "9", src: img7.src, alt: "Temple", category: ["Group"], width: 600, height: 400 },
+  { id: "10", src: img8.src, alt: "Big Ben", category: ["Mettings" , "Gatherings"], width: 600, height: 400 },
+  { id: "11", src: img9.src, alt: "Garage doors", category: ["Group", "Team"], width: 600, height: 400 },
 ]
 
 export default function ImageGallery() {
@@ -147,32 +67,24 @@ export default function ImageGallery() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row gap-4 justify-between">
-        <div className="flex items-center gap-2 w-full sm:w-auto">
-          <Filter className="h-5 w-5 text-[#85d3ff]" />
-          <select
-            value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
-            className="border border-[#045be6] rounded-md px-3 py-2 bg-[#edf8ff] w-full sm:w-auto"
+      {/* Filter Tabs */}
+      <div className="flex flex-wrap justify-center gap-4">
+        {allCategories.map((category) => (
+          <button
+            key={category}
+            onClick={() => setSelectedCategory(category)}
+            className={`px-4 py-2 rounded-xl  transition-all font-semibold ${
+              selectedCategory === category
+                ? "bg-[#d6eeff] text-[#045be6] shadow-md border border-[#045be6]"
+                : "bg-gray-200 text-gray-800 hover:bg-[#b7e3ff] hover:text-[#045be6]"
+            }`}
           >
-            {allCategories.map((category) => (
-              <option key={category} value={category} className="bg-[#edf8ff]">
-                {category}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="relative w-full sm:w-auto">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#85d3ff]" />
-          <input
-            type="text"
-            placeholder="Search images..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="pl-9 pr-4 py-2 border border-[#045be6] rounded-md w-full"
-          />
-        </div>
+            {category}
+          </button>
+        ))}
       </div>
+
+      {/* Image Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {images.map((image) => (
           <div key={image.id} className="group relative overflow-hidden rounded-lg h-full">
@@ -207,8 +119,6 @@ export default function ImageGallery() {
           </div>
         ))}
       </div>
-
-      {/* Empty state */}
       {images.length === 0 && (
         <div className="text-center py-12">
           <p className="text-muted-foreground">No images found. Try adjusting your filters.</p>
@@ -217,4 +127,3 @@ export default function ImageGallery() {
     </div>
   )
 }
-

@@ -53,49 +53,7 @@ export default function Timeline() {
 
   return (
     <div className="bg-white py-20">
-      <header className="absolute inset-x-0 top-0 z-50">
-        <nav aria-label="Global" className="mx-auto flex flex-col max-w-7xl items-start justify-between p-6 lg:px-8">
-          <div className="flex lg:flex-1">
-            <a href="/" className="-m-1.5 p-1.5">
-              <span className="sr-only">Uppraisal Consultant</span>
-              <img
-                alt="Uppraisal Consultant"
-                src={logo.src}
-                className="h-10 w-auto"
-              />
-            </a>
-          </div>
-          <div className="flex mt-8">
-                <ol role="list" className="flex items-center space-x-4">
-                  <li>
-                    <div>
-                      <a href="/" className="text-gray-700 hover:text-gray-800">
-                        <HomeIcon aria-hidden="true" className="size-6 shrink-0" />
-                        <span className="sr-only">Home</span>
-                      </a>
-                    </div>
-                  </li>
-                  {pages.map((page) => (
-                    <li key={page.name}>
-                      <div className="flex items-center">
-                        <svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" className="size-5 shrink-0 text-gray-300">
-                          <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
-                        </svg>
-                        <a
-                          href={page.href}
-                          aria-current={page.current ? 'page' : undefined}
-                          className="ml-4 text-lg font-medium text-gray-700 hover:text-gray-800"
-                        >
-                          {page.name}
-                        </a>
-                      </div>
-                    </li>
-                  ))}
-                </ol>
-                </div>
-        </nav>
-      </header>
-      <div className="relative mt-32 mx-auto max-w-7xl sm:mt-40 sm:px-6 rounded-md lg:px-8 bg-gray-900">
+      <div className="relative mt-16 mx-auto max-w-7xl sm:px-6 rounded-md lg:px-8 bg-gray-900">
       <div className="relative h-80 overflow-hidden bg-[#4bbcff] md:absolute md:left-0 md:h-full md:w-1/3 rounded md lg:w-1/2">
         <img
           alt=""
