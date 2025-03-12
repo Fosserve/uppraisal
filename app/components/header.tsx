@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon, ArrowUpIcon } from '@heroicons/react/24/outline'
@@ -17,9 +17,14 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const pathname = usePathname() // Get current route
 
+  useEffect(() => {
+    // This effect will run once on mount and whenever pathname changes
+    // It's a good place to handle any side effects related to pathname
+  }, [pathname])
+
   return (
-    <div className='bg-white'>
-      <header className="absolute inset-x-0 top-0 z-50">
+    <div className='bg-white mb-4'>
+      <header>
         <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center p-6 lg:px-8">
           <div className="flex">
             <a href="/" className="-m-1.5 p-1.5">
@@ -94,15 +99,6 @@ const Header = () => {
           </DialogPanel>
         </Dialog>
       </header>
-      {showFab && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-4 right-4 z-50 inline-flex items-center justify-center p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600"
-        >
-          <ArrowUpIcon className="h-6 w-6" aria-hidden="true" />
-          <span className="sr-only">Scroll to top</span>
-        </button>
-      )}
     </div>
   )
 }

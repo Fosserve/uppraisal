@@ -36,8 +36,7 @@ export default function RootLayout({
         className={`${poppins.variable} bg-white  antialiased`}
       >
         <div>
-          <Header />
-          <main>{children}</main>
+          <main className="gap-4">{children}</main>
           <FooterSection />
         </div>
       </body>
