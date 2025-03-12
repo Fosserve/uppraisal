@@ -142,7 +142,6 @@ export default function ImageGallery() {
           <p className="text-muted-foreground">No images found. Try adjusting your filters.</p>
         </div>
       )}
-      
     </div>
   )
 }
