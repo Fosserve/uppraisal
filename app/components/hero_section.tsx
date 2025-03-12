@@ -11,9 +11,10 @@ const images = [
 export default function HeroSection() {
   return (
     <div className="bg-white">
-      <main>
-        <div className="mx-auto w-full max-w-7xl pt-16 pb-20 text-center lg:py-48 lg:text-left">
-          <div className="px-6 sm:px-8 lg:w-1/2 xl:pr-16">
+      
+      <main className="mx-auto w-full max-w-7xl pt-16 pb-20 lg:py-10">
+        <div className="flex flex-col lg:flex-row items-center">
+          <div className="px-6 sm:px-8 lg:w-1/2 lg:pr-16 text-center lg:text-left">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
               <span className="block xl:inline">Elevate Your Business with Expert</span>{' '}
               <span className="block text-[#055be9] xl:inline">Consulting Solutions</span>
@@ -32,13 +33,15 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
-        </div>
-        <div className="relative h-64 w-full sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:w-1/2">
-          <img
-            alt=""
-            src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2102&q=80"
-            className="absolute inset-0 size-full object-cover"
-          />
+          <div className="mt-10 lg:mt-0 lg:w-1/2 lg:pl-16">
+            <div className="h-64 w-64 sm:h-72 sm:w-72 md:h-96 md:w-96 lg:h-[500px] lg:w-[500px]">
+              <img
+                alt=""
+                src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2102&q=80"
+                className="size-full object-cover rounded-full"
+              />
+            </div>
+          </div>
         </div>
       </main>
     </div>
