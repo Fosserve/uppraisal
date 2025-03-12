@@ -11,59 +11,39 @@ const images = [
 export default function HeroSection() {
   return (
     <div className="bg-white">
-      <div className="relative isolate overflow-hidden">
-        {/* Background gradient */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-blue-50/20 via-white to-white" />
-        
-        {/* Blob effect */}
-        <div className="absolute right-0 top-0 -z-10 h-[800px] w-[800px] -translate-y-1/2 translate-x-1/2 transform rounded-full bg-gradient-radial from-blue-100/50 via-transparent to-transparent blur-3xl" />
-
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16 sm:py-24">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
-            {/* Content Section */}
-            <div className="flex flex-col justify-center space-y-8">
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
-                Elevate Your Business with Expert Consulting Solutions
-              </h1>
-              <p className="text-lg text-gray-600 sm:text-xl">
-                Discover what sets us apart. Our process, expertise, and commitment ensure success for both companies and candidates. Partnering with us brings distinct advantages, making the recruitment process seamless and effective.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="https://careers.uppraisalconsultant.in"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 transition-colors"
-                >
+      
+      <main className="mx-auto w-full max-w-7xl pt-16 pb-20 lg:py-10">
+        <div className="flex flex-col lg:flex-row items-center">
+          <div className="px-6 sm:px-8 lg:w-1/2 lg:pr-16 text-center lg:text-left">
+            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
+              <span className="block xl:inline">Elevate Your Business with Expert</span>{' '}
+              <span className="block text-[#055be9] xl:inline">Consulting Solutions</span>
+            </h1>
+            <p className="mx-auto mt-3 max-w-md text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
+              Discover what sets us apart. Our process, expertise, and commitment ensure success for both companies and candidates. Partnering with us brings distinct advantages, making the recruitment process seamless and effective.
+            </p>
+            <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
+              <div className="rounded-md shadow-sm">
+                <a href="https://careers.uppraisalconsultant.in" target="_blank" className="inline-flex items-center mt-4 bg-blue-200 text-blue-700 font-semibold py-2 px-4 rounded hover:bg-blue-300">
                   Explore Opportunities
-                  <ArrowRight className="h-5 w-5" />
+                  <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
                 </a>
               </div>
             </div>
-
-            {/* Image Grid Section */}
-            <div className="grid grid-cols-2 gap-2 sm:gap-3 max-w-[300px] sm:max-w-[400px] mx-auto">
-              {images.map((image, index) => (
-                <div
-                  key={index}
-                  className={`relative rounded-lg shadow-md overflow-hidden ${
-                    index === 0 ? "aspect-square" : "aspect-[3/4]"
-                  } ${
-                    index === 2 ? "col-span-2" : ""
-                  }`}
-                >
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="absolute inset-0 h-full w-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/10 to-transparent" />
-                </div>
-              ))}
+          </div>
+          <div className="mt-10 lg:mt-0 lg:w-1/2 lg:pl-16">
+            <div className="h-64 w-64 sm:h-72 sm:w-72 md:h-96 md:w-96 lg:h-[500px] lg:w-[500px]">
+              <img
+                alt=""
+                src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2102&q=80"
+                className="size-full object-cover rounded-full"
+              />
             </div>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }
