@@ -35,20 +35,17 @@ export default function HeroSection() {
               style={{ clipPath: "polygon(63.1% 29.5%, 100% 17.1%, 76.6% 3%, 48.4% 0%, 44.6% 4.7%, 54.5% 25.3%, 59.8% 49%, 55.2% 57.8%, 44.4% 57.2%, 27.8% 47.9%, 35.1% 81.5%, 0% 97.7%, 39.2% 100%, 35.2% 81.4%, 97.2% 52.8%, 63.1% 29.5%)" }}
             />
           </div>
-          <div className="overflow-hidden mx-auto max-w-7xl px-6 pb-32 lg:px-8">
-            <div className="mx-auto max-w-2xl lg:mx-0 lg:flex lg:max-w-none lg:items-center">
-              <div className="w-full lg:max-w-xl xl:max-w-2xl">
-                <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900">
-                  Elevate Your Business with Expert Consulting Solutions
-                </h1>
-                <p className="mt-8 text-lg text-gray-500 sm:max-w-md sm:text-xl lg:max-w-none">
-                  Discover what sets us apart. Our expertise and commitment ensure success for companies and candidates. Partner with us for a seamless recruitment process.
-                </p>
-                <a
-                  href="https://careers.uppraisalconsultant.in"
-                  target="_blank"
-                  className="inline-flex items-center mt-4 bg-blue-200 text-blue-700 font-semibold py-2 px-4 rounded hover:bg-blue-300"
-                >
+          <div className="overflow-hidden">
+            <div className="mx-auto max-w-7xl mt-32 px-6 pb-32 lg:px-8">
+              <div className="mx-auto max-w-2xl gap-x-2 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
+                <div className="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
+                  <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900">
+                    Elevate Your Business with Expert Consulting Solutions
+                  </h1>
+                  <p className="mt-8 text-lg text-gray-500 sm:max-w-md sm:text-xl lg:max-w-none">
+                    Discover what sets us apart. Our process, expertise, and commitment ensure success for both companies and candidates. Partnering with us brings distinct advantages, making the recruitment process seamless and effective.
+                  </p>
+                 <a href="https://careers.uppraisalconsultant.in" target="_blank" className="inline-flex items-center mt-4 bg-blue-200 text-blue-700 font-semibold py-2 px-4 rounded hover:bg-blue-300">
                   Explore Opportunities
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>

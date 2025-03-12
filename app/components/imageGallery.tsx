@@ -13,7 +13,16 @@ import img5 from "../../public/team/img5.jpg"
 import img6 from "../../public/team/img6.jpg"
 import img7 from "../../public/team/img7.jpg"
 import img8 from "../../public/team/img8.jpg"
+import img10 from "../../public/team/img10.jpg"
+import img11 from "../../public/team/img11.jpg"
+import img12 from "../../public/team/img12.jpg"
+import img13 from "../../public/team/img13.jpg"
+import img14 from "../../public/team/img14.jpg"
+import img15 from "../../public/team/img15.jpg"
+import img16 from "../../public/team/img16.jpg"
+import img17 from "../../public/team/img17.jpg"
 import img9 from "../../public/team/img9.jpg"
+
 
 // Define the image data structure
 interface ImageItem {
@@ -38,6 +47,15 @@ const imageData: ImageItem[] = [
   { id: "9", src: img7.src, alt: "Temple", category: ["Group"], width: 600, height: 400 },
   { id: "10", src: img8.src, alt: "Big Ben", category: ["Mettings" , "Gatherings"], width: 600, height: 400 },
   { id: "11", src: img9.src, alt: "Garage doors", category: ["Group", "Team"], width: 600, height: 400 },
+  { id: "12", src: img10.src, alt: "Garage doors", category: ["Group", "Team"], width: 600, height: 400 },
+  { id: "13", src: img11.src, alt: "Garage doors", category: ["Celebration", "Team"], width: 600, height: 400 },
+  { id: "14", src: img12.src, alt: "Garage doors", category: ["Gatherings", "Celebration"], width: 600, height: 400 },
+  { id: "15", src: img13.src, alt: "Garage doors", category: ["Group", "Team"], width: 600, height: 400 },
+  { id: "16", src: img14.src, alt: "Garage doors", category: ["Group", "Mettings"], width: 600, height: 400 },
+  { id: "17", src: img15.src, alt: "Garage doors", category: ["Gatherings", "Team"], width: 600, height: 400 },
+  { id: "18", src: img16.src, alt: "Garage doors", category: ["Group", "Celebration"], width: 600, height: 400 },
+  { id: "19", src: img17.src, alt: "Garage doors", category: ["Group", "Celebration"], width: 600, height: 400 },
+
 ]
 
 export default function ImageGallery() {
@@ -124,6 +142,7 @@ export default function ImageGallery() {
           <p className="text-muted-foreground">No images found. Try adjusting your filters.</p>
         </div>
       )}
+      
     </div>
   )
 }
