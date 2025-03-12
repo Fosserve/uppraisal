@@ -1,28 +1,22 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import Image from "next/image"
+import { useState, useEffect, useMemo } from "react"
+import Image, { StaticImageData } from "next/image"
 import { Search } from "lucide-react"
-import image1 from "../../public/team/image1.jpg"
-import image2 from "../../public/team/image2.jpg"
-import img1 from "../../public/team/img1.jpg"
-import img2 from "../../public/team/img2.jpg"
-import img3 from "../../public/team/img3.jpg"
-import img4 from "../../public/team/img4.jpg"
-import img5 from "../../public/team/img5.jpg"
-import img6 from "../../public/team/img6.jpg"
-import img7 from "../../public/team/img7.jpg"
-import img8 from "../../public/team/img8.jpg"
-import img10 from "../../public/team/img10.jpg"
-import img11 from "../../public/team/img11.jpg"
-import img12 from "../../public/team/img12.jpg"
-import img13 from "../../public/team/img13.jpg"
-import img14 from "../../public/team/img14.jpg"
-import img15 from "../../public/team/img15.jpg"
-import img16 from "../../public/team/img16.jpg"
-import img17 from "../../public/team/img17.jpg"
-import img9 from "../../public/team/img9.jpg"
 
+// Manually import images from the team folder
+import img1 from "../../public/team/img1.jpg";
+import img2 from "../../public/team/img2.jpg";
+import img3 from "../../public/team/img3.jpg";
+import img4 from "../../public/team/img4.jpg";
+import img5 from "../../public/team/img5.jpg";
+import img6 from "../../public/team/img6.jpg";
+import img7 from "../../public/team/img7.jpg";
+import img8 from "../../public/team/img8.jpg";
+import img9 from "../../public/team/img9.jpg";
+import img10 from "../../public/team/img10.jpg";
+
+const images: StaticImageData[] = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
 
 // Define the image data structure
 interface ImageItem {
@@ -35,35 +29,24 @@ interface ImageItem {
 }
 
 // Sample image data
-const imageData: ImageItem[] = [
-  { id: "1", src: image1.src, alt: "Leaf with water droplets", category: ["Team"], width: 600, height: 400 },
-  { id: "2", src: image2.src, alt: "Boats on a lake", category: ["Team"], width: 600, height: 400 },
-  { id: "3", src: img1.src, alt: "Colorful pencils", category: ["Team"], width: 600, height: 400 },
-  { id: "4", src: img2.src, alt: "Fresh fruits", category: ["Group", "Celebration"], width: 600, height: 400 },
-  { id: "5", src: img3.src, alt: "Tree in winter", category: ["Celebration", "Gatherings"], width: 600, height: 400 },
-  { id: "6", src: img4.src, alt: "Tree in autumn", category: ["Celebration"], width: 600, height: 400 },
-  { id: "7", src: img5.src, alt: "City sunset", category: ["Group"], width: 600, height: 400 },
-  { id: "8", src: img6.src, alt: "Modern building", category: ["Gatherings", "Celebration"], width: 600, height: 400 },
-  { id: "9", src: img7.src, alt: "Temple", category: ["Group"], width: 600, height: 400 },
-  { id: "10", src: img8.src, alt: "Big Ben", category: ["Mettings" , "Gatherings"], width: 600, height: 400 },
-  { id: "11", src: img9.src, alt: "Garage doors", category: ["Group", "Team"], width: 600, height: 400 },
-  { id: "12", src: img10.src, alt: "Garage doors", category: ["Group", "Team"], width: 600, height: 400 },
-  { id: "13", src: img11.src, alt: "Garage doors", category: ["Celebration", "Team"], width: 600, height: 400 },
-  { id: "14", src: img12.src, alt: "Garage doors", category: ["Gatherings", "Celebration"], width: 600, height: 400 },
-  { id: "15", src: img13.src, alt: "Garage doors", category: ["Group", "Team"], width: 600, height: 400 },
-  { id: "16", src: img14.src, alt: "Garage doors", category: ["Group", "Mettings"], width: 600, height: 400 },
-  { id: "17", src: img15.src, alt: "Garage doors", category: ["Gatherings", "Team"], width: 600, height: 400 },
-  { id: "18", src: img16.src, alt: "Garage doors", category: ["Group", "Celebration"], width: 600, height: 400 },
-  { id: "19", src: img17.src, alt: "Garage doors", category: ["Group", "Celebration"], width: 600, height: 400 },
-
-]
+const imageData: ImageItem[] = images.map((img: StaticImageData, index: number) => ({
+  id: index.toString(),
+  src: img.src,
+  alt: `Image ${index}`,
+  category: [["Team", "Group", "Celebration", "Gatherings", "Meetings"][Math.floor(Math.random() * 5)]],
+  width: 600,
+  height: 400
+}))
 
 export default function ImageGallery() {
   const [images, setImages] = useState<ImageItem[]>(imageData)
   const [selectedCategory, setSelectedCategory] = useState<string>("All")
   const [searchTerm, setSearchTerm] = useState<string>("")
 
-  const allCategories = ["All", ...new Set(imageData.flatMap((img) => img.category))]
+  const allCategories = useMemo(() => 
+    ["All", ...new Set(imageData.flatMap((img) => img.category))],
+    [imageData]
+  )
 
   useEffect(() => {
     let filtered = imageData
@@ -84,32 +67,46 @@ export default function ImageGallery() {
   }, [selectedCategory, searchTerm])
 
   return (
-    <div className="space-y-6">
-      {/* Filter Tabs */}
-      <div className="flex flex-wrap justify-center gap-4">
-        {allCategories.map((category) => (
-          <button
-            key={category}
-            onClick={() => setSelectedCategory(category)}
-            className={`px-4 py-2 rounded-xl  transition-all font-semibold ${
-              selectedCategory === category
-                ? "bg-[#d6eeff] text-[#045be6] shadow-md border border-[#045be6]"
-                : "bg-gray-200 text-gray-800 hover:bg-[#b7e3ff] hover:text-[#045be6]"
-            }`}
-          >
-            {category}
-          </button>
-        ))}
+    <div className="space-y-6 px-4 sm:px-6 lg:px-8">
+      {/* Search and Filter Section */}
+      <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
+        {/* Search Input */}
+        <div className="relative w-full sm:w-64">
+          <input
+            type="text"
+            placeholder="Search images..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+        </div>
+
+        {/* Filter Tabs */}
+        <div className="flex flex-wrap gap-2 w-full sm:w-auto overflow-x-auto py-2">
+          {allCategories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`px-3 py-1.5 text-sm rounded-lg transition-all font-medium whitespace-nowrap ${
+                selectedCategory === category
+                  ? "bg-blue-100 text-blue-700 shadow-sm"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Image Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
         {images.map((image) => (
-          <div key={image.id} className="group relative overflow-hidden rounded-lg h-full">
+          <div key={image.id} className="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-shadow">
             <div
-              className="relative w-full"
+              className="relative w-full aspect-square"
               style={{
-                paddingBottom: `${(image.height / image.width) * 100}%`,
                 minHeight: "200px",
               }}
             >
@@ -137,12 +134,12 @@ export default function ImageGallery() {
           </div>
         ))}
       </div>
+
       {images.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-muted-foreground">No images found. Try adjusting your filters.</p>
+          <p className="text-gray-500">No images found. Try adjusting your filters.</p>
         </div>
       )}
-      
     </div>
   )
 }

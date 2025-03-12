@@ -1,12 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDownIcon } from "@heroicons/react/16/solid";
-import { HomeIcon } from '@heroicons/react/20/solid'
 import { CheckCircleIcon } from '@heroicons/react/20/solid'
-import logo from "../../public/uppraisal-logo.png"
 import image1 from "../../public/team/img9.jpg"
-
+import Header from "../components/header";
 
 const pages = [
   { name: 'Careers', href: '/career', current: false },
@@ -21,8 +18,7 @@ const timeline = [
   },
   {
     name: "Sourcing Candidates",
-    description:
-      "Finding potential candidates through internal and external channels.",
+    description: "Finding potential candidates through internal and external channels.",
     step: "02",
     dateTime: "2021-08",
   },
@@ -39,6 +35,7 @@ const timeline = [
     step: "04",
   },
 ];
+
 const benefits = [
   'Competitive salaries',
   'Flexible work hours',
@@ -52,144 +49,98 @@ export default function Timeline() {
   const [agreed, setAgreed] = useState(false);
 
   return (
-    <div className="bg-white py-20">
-      <div className="relative mt-16 mx-auto max-w-7xl sm:px-6 rounded-md lg:px-8 bg-gray-900">
-      <div className="relative h-80 overflow-hidden bg-[#4bbcff] md:absolute md:left-0 md:h-full md:w-1/3 rounded md lg:w-1/2">
-        <img
-          alt=""
-          src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&blend=6366F1&sat=-100&blend-mode=multiply"
-          className="size-full object-cover rounded-md mix-blend-multiply"
-        />
-        <svg
-          viewBox="0 0 926 676"
-          aria-hidden="true"
-          className="absolute -bottom-24 left-24 w-[57.875rem] transform-gpu blur-[118px]"
-        >
-          <path
-            d="m254.325 516.708-90.89 158.331L0 436.427l254.325 80.281 163.691-285.15c1.048 131.759 36.144 345.144 168.149 144.613C751.171 125.508 707.17-93.823 826.603 41.15c95.546 107.978 104.766 294.048 97.432 373.585L685.481 297.694l16.974 360.474-448.13-141.46Z"
-            fill="url(#60c3c621-93e0-4a09-a0e6-4c228a0116d8)"
-            fillOpacity=".4"
+    <div className="bg-white">
+      <Header />
+      
+      {/* Hero Section */}
+      <div className="relative mt-10 mx-auto max-w-7xl sm:px-6 rounded-md lg:px-8 bg-gray-900">
+        <div className="relative h-80 overflow-hidden bg-[#4bbcff] md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2 rounded-md">
+          <img
+            alt=""
+            src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=60&blend=6366F1&sat=-100&blend-mode=multiply"
+            className="w-full h-full object-cover rounded-md mix-blend-multiply"
           />
-          <defs>
-            <linearGradient
-              id="60c3c621-93e0-4a09-a0e6-4c228a0116d8"
-              x1="926.392"
-              x2="-109.635"
-              y1=".176"
-              y2="321.024"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stopColor="#776FFF" />
-              <stop offset={1} stopColor="#FF4694" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-      <div className="relative mx-auto max-w-7xl py-24 sm:py-32 lg:px-8 lg:py-40">
-        <div className="pr-6 pl-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pr-0 lg:pl-24 xl:pl-32">
-          <h2 className="text-base/7 font-semibold text-[#4bbcff]">Grow With Us – Your Future Starts Here</h2>
-          <p className="mt-2 text-4xl font-semibold tracking-tight text-white sm:text-5xl">We’re here to help</p>
-          <p className="mt-6 text-base/7 text-gray-300">
-          We’re looking for passionate individuals at every stage of their careers—freshers eager to learn, experienced professionals ready to lead, and trained experts seeking new challenges. Join us to shape the future while advancing your own. Explore opportunities that match your skills and ambitions!
-          </p>
-          <div className="mt-8">
-            <a
-              href="http://careers.uppraisalconsultant.in"
-              className="inline-flex rounded-md bg-white/10 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-            >
-              Visit our Job Portal
-            </a>
+        </div>
+        <div className="relative mx-auto max-w-7xl py-12 sm:py-24 lg:px-8 lg:py-32">
+          <div className="px-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pl-24 xl:pl-32">
+            <h2 className="text-base font-semibold text-[#4bbcff]">Grow With Us – Your Future Starts Here</h2>
+            <h1 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl">We're here to help</h1>
+            <p className="mt-4 text-base text-gray-300">
+              We're looking for passionate individuals at every stage of their careers—freshers eager to learn, experienced professionals ready to lead, and trained experts seeking new challenges.
+            </p>
+            <div className="mt-6">
+              <a
+                href="http://careers.uppraisalconsultant.in"
+                className="inline-block rounded-md bg-white/10 px-4 py-2.5 text-sm font-semibold text-white hover:bg-white/20 transition-colors"
+              >
+                Visit our Job Portal
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-      <div className="mx-auto max-w-2xl px-8 lg:px-6 lg:text-center mt-24">
-        <p className="text-base/7 font-semibold text-[#0a7aff]">
-          how we filter
-        </p>
-        <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:text-balance">
-          Our Process of Recruitment
-        </p>
-        <p className="mt-6 text-lg/8 text-gray-600">
-          We conduct extensive search for quality candidates based on our client
-          preferences and requirements for filling up various positions in their
-          companies.
-        </p>
-      </div>
-      <div className="mx-auto max-w-7xl mt-8 px-6 lg:px-8">
-        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-4">
+      {/* Recruitment Process Section */}
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-16 sm:mt-24">
+        <div className="text-center">
+          <p className="text-base font-semibold text-[#0a7aff]">How we filter</p>
+          <h2 className="mt-2 text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
+            Our Process of Recruitment
+          </h2>
+          <p className="mt-4 mx-auto max-w-2xl text-base text-gray-600">
+            We conduct extensive search for quality candidates based on our client preferences and requirements.
+          </p>
+        </div>
+        <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {timeline.map((item) => (
-            <div key={item.name}>
-              <time
-                dateTime={item.dateTime}
-                className="flex items-center text-sm/6 font-semibold text-[#0a7aff]"
-              >
-                <svg
-                  viewBox="0 0 4 4"
-                  aria-hidden="true"
-                  className="mr-4 size-1 flex-none"
-                >
-                  <circle r={2} cx={2} cy={2} fill="currentColor" />
-                </svg>
+            <div key={item.name} className="p-6 rounded-lg hover:bg-gray-50 transition-colors">
+              <div className="flex items-center text-sm font-semibold text-[#0a7aff]">
+                <span className="mr-2">•</span>
                 {item.step}
-                <div
-                  aria-hidden="true"
-                  className="absolute -ml-2 h-px w-screen -translate-x-full bg-gray-900/10 sm:-ml-4 lg:static lg:-mr-6 lg:ml-8 lg:w-auto lg:flex-auto lg:translate-x-0"
-                />
-              </time>
-              <p className="mt-6 text-lg/8 font-semibold tracking-tight text-gray-900">
-                {item.name}
-              </p>
-              <p className="mt-1 text-base/7 text-gray-600">
-                {item.description}
-              </p>
+              </div>
+              <h3 className="mt-4 text-lg font-semibold text-gray-900">{item.name}</h3>
+              <p className="mt-2 text-base text-gray-600">{item.description}</p>
             </div>
           ))}
         </div>
       </div>
-      <div className="flex justify-center mt-24">
-      <div className="mx-auto bg-gray-800 py-12 px-6 flex max-w-2xl flex-col gap-16 max-w-7xl sm:px-6 lg:px-8 py-16 ring-1 ring-white/10 sm:rounded-3xl sm:p-8 lg:mx-0 lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20">
+
+      {/* Join Our Team Section */}
+      <div className="mt-16 sm:my-24">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+          <div className="bg-gray-800 rounded-3xl p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
             <img
               alt="Career page"
               src={image1.src}
-              className="h-96 w-full flex-none rounded-2xl object-cover shadow-xl lg:aspect-square lg:h-auto lg:max-w-sm"
+              className="w-full lg:w-1/2 h-96 lg:h-[20rem] object-cover rounded-2xl shadow-xl"
             />
-            <div className="w-full flex-auto">
-              <h2 className="text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">
+            <div className="w-full lg:w-1/2 space-y-6">
+              <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
                 Join our team
               </h2>
-              <p className="mt-6 text-lg/8 text-pretty text-gray-300">
-              How do you create remarkable change? By hiring, celebrating and nurturing the best people-from all walks of life.
+              <p className="text-lg text-gray-300">
+                How do you create remarkable change? By hiring, celebrating and nurturing the best people-from all walks of life.
               </p>
-              <ul role="list" className="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base/7 text-white sm:grid-cols-2">
+              <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {benefits.map((benefit) => (
-                  <li key={benefit} className="flex gap-x-3">
-                    <CheckCircleIcon aria-hidden="true" className="h-7 w-5 flex-none" />
+                  <li key={benefit} className="flex items-center gap-2 text-base text-white">
+                    <CheckCircleIcon className="h-5 w-5 text-[#0a7aff]" />
                     {benefit}
                   </li>
                 ))}
               </ul>
-              <div className="mt-10 flex">
-                <a href="http://careers.uppraisalconsultant.in" className="text-sm/6 font-semibold text-[#0a7aff]">
-                  See our job postings <span aria-hidden="true">&rarr;</span>
+              <div className="mt-8">
+                <a
+                  href="http://careers.uppraisalconsultant.in"
+                  className="inline-flex items-center text-sm font-semibold text-[#0a7aff] hover:text-[#0a7aff]/80 transition-colors"
+                >
+                  See our job postings <span aria-hidden="true" className="ml-1">&rarr;</span>
                 </a>
               </div>
             </div>
+          </div>
         </div>
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 -top-16 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl"
-        >
-          <div
-            style={{
-              clipPath:
-                'polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)',
-            }}
-            className="aspect-1318/752 w-[82.375rem] flex-none bg-linear-to-r from-[#80caff] to-[#4f46e5] opacity-25"
-          />
-        </div>
-        </div>
+      </div>
     </div>
   );
 }

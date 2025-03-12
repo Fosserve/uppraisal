@@ -11,64 +11,55 @@ import image1 from "../../public/team/img7.jpg";
 import image2 from "../../public/team/img8.jpg";
 import image3 from "../../public/team/img6.jpg";
 import image4 from "../../public/team/img4.jpg";
-
-
-
+import Header from "../components/header";
 
 const timeline = [
   {
     name: "Establishment of UPPRAISAL CONSULTANT",
-    description:
-      "Founded in Kolkata to provide integrated HR solutions for industries, startups, and MNCs.",
+    description: "Founded in Kolkata to provide integrated HR solutions for industries, startups, and MNCs.",
     date: "2015-01",
     dateTime: "2021-08",
   },
   {
     name: "Expansion to Multisector Services",
-    description:
-      "Diversified offerings to serve a wide range of industries with tailored HR solutions.",
+    description: "Diversified offerings to serve a wide range of industries with tailored HR solutions.",
     date: "2017-06",
     dateTime: "2021-12",
   },
   {
     name: "Recognition as a Leading Consultant",
-    description:
-      "Achieved recognition as one of the leading HR consultants in the Eastern Zone.",
+    description: "Achieved recognition as one of the leading HR consultants in the Eastern Zone.",
     date: "2020-03",
     dateTime: "2022-02",
   },
   {
     name: "Commitment to Excellence",
-    description:
-      "Continuing to deliver innovative HR services with a client-first approach.",
+    description: "Continuing to deliver innovative HR services with a client-first approach.",
     date: "2025-01",
     dateTime: "2022-12",
   },
 ];
+
 const Values = [
   {
     id: 1,
     name: "Honesty: The Pillar of Integrity",
-    description:
-      "We believe in being transparent and truthful in all our interactions. Honesty is not just a value but the foundation of trust, ensuring our clients and employees can always rely on us.",
+    description: "We believe in being transparent and truthful in all our interactions. Honesty is not just a value but the foundation of trust, ensuring our clients and employees can always rely on us.",
   },
   {
     id: 2,
     name: "Trust: Building Lasting Partnerships",
-    description:
-      "Trust is at the heart of everything we do. We strive to earn and maintain the trust of our clients, employees, and partners by consistently delivering on our promises.",
+    description: "Trust is at the heart of everything we do. We strive to earn and maintain the trust of our clients, employees, and partners by consistently delivering on our promises.",
   },
   {
     id: 3,
     name: "Value-Centricity: Putting Clients First",
-    description:
-      "We are committed to delivering exceptional value to our clients by understanding their unique needs and providing tailored solutions.",
+    description: "We are committed to delivering exceptional value to our clients by understanding their unique needs and providing tailored solutions.",
   },
   {
     id: 5,
     name: "Collaboration: Together We Achieve More",
-    description:
-      "We believe in the power of teamwork. By fostering collaboration among our team and with our clients, we create innovative solutions that address complex challenges.",
+    description: "We believe in the power of teamwork. By fostering collaboration among our team and with our clients, we create innovative solutions that address complex challenges.",
   }
 ];
 
@@ -76,137 +67,76 @@ const pages = [
   { name: 'About Us', href: '/about-us', current: false },
 ]
 
-
-export default function Example() {
+export default function AboutUsPage() {
   return (
-    <div className="bg-white py-12">
-      <main className="isolate mt-16">      
-        <div className="relative isolate -z-10 overflow-hidden bg-linear-to-b from-indigo-100/20">
-          <div
-            aria-hidden="true"
-            className="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white ring-1 shadow-xl shadow-[#035de5]/10 ring-[#edf8ff] sm:-mr-80 lg:-mr-96"
-          />
-          <div className="mx-auto max-w-7xl px-6 py-12 sm:-py16 lg:px-8">
-            <div className="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-8 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
-              {/* <h1 class="max-w-2xl text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl lg:col-span-2 xl:col-auto">We’re changing the way people connect</h1> */}
-              <h1 className="max-w-2xl text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl lg:col-span-2 xl:col-auto">
-              Leading HR Solutions in Eastern India Since 2015              </h1>
-              <div className="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
-                <p className="text-lg mx-auto font-medium  text-pretty text-gray-500 sm:text-xl/8">
-                  We, the UPPRAISAL CONSULTANT have already been considered as
-                  one of the leading consultants in Eastern zone, specifically
-                  in Kolkata since - 2015 UPPRAISAL CONSULTANT tries to serve a
-                  wide range of integrated levelled human resource services
-                  across different industries, newly growing companies, MNC’s,
-                  etc. subjecting to their requirements through the best
-                  possible way without any delay.
+    <div className="bg-white">
+      <Header />
+      <main className="isolate">
+        {/* Hero Section */}
+        <div className="relative isolate -z-10 overflow-hidden bg-gradient-to-b from-indigo-100/20">
+          <div className="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white ring-1 shadow-xl shadow-[#035de5]/10 ring-[#edf8ff] sm:-mr-80 lg:-mr-96" />
+          <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl lg:max-w-none lg:grid lg:grid-cols-2 lg:gap-x-16 lg:gap-y-8 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
+              <h1 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-7xl">
+                Leading HR Solutions in Eastern India Since 2015
+              </h1>
+              <div className="my-6 max-w-7xl lg:mt-0 xl:col-end-1 xl:row-start-1">
+                <p className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed">
+                  Since 2015, <span className="text-blue-600">UPPRAISAL CONSULTANT</span> has established itself as a premier HR solutions provider in Eastern India, with a strong presence in Kolkata. We specialize in delivering comprehensive, multi-level human resource services tailored to diverse industries - from emerging startups to established multinational corporations. Our commitment to timely, efficient, and customized solutions has made us a trusted partner for organizations seeking to optimize their workforce potential.
                 </p>
               </div>
               <img
                 alt=""
                 src={image1.src}
-                className="mt-10 aspect-6/5 w-full mx-auto max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-16"
+                className="mt-8 aspect-[6/5] w-full rounded-2xl object-cover sm:mt-12 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-16"
               />
             </div>
           </div>
-          <div className="absolute inset-x-0 bottom-0 -z-10 h-24 bg-linear-to-t from-white sm:h-32" />
+          <div className="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-white sm:h-32" />
         </div>
 
-        {/* Timeline section */}
-        <div className="mx-auto -mt-8 max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-4">
+        {/* Timeline Section */}
+        <div className="mx-auto -mt-8 max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:max-w-none lg:grid-cols-4">
             {timeline.map((item) => (
-              <div key={item.name}>
-                <time
-                  dateTime={item.dateTime}
-                  className="flex items-center text-sm/6 font-semibold text-[#035de5]"
-                >
-                  <svg
-                    viewBox="0 0 4 4"
-                    aria-hidden="true"
-                    className="mr-4 size-1 flex-none"
-                  >
+              <div key={item.name} className="p-4">
+                <time dateTime={item.dateTime} className="flex items-center text-sm font-semibold text-[#035de5]">
+                  <svg viewBox="0 0 4 4" className="mr-2 h-1 w-1 flex-none">
                     <circle r={2} cx={2} cy={2} fill="currentColor" />
                   </svg>
                   {item.date}
-                  <div
-                    aria-hidden="true"
-                    className="absolute -ml-2 h-px w-screen -translate-x-full bg-gray-900/10 sm:-ml-4 lg:static lg:-mr-6 lg:ml-8 lg:w-auto lg:flex-auto lg:translate-x-0"
-                  />
                 </time>
-                <p className="mt-6 text-lg/8 font-semibold tracking-tight text-gray-900">
-                  {item.name}
-                </p>
-                <p className="mt-1 text-base/7 text-gray-600">
-                  {item.description}
-                </p>
+                <p className="mt-4 text-lg font-semibold text-gray-900">{item.name}</p>
+                <p className="mt-2 text-base text-gray-600">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Logo cloud */}
-        <div className="mx-auto mt-32 max-w-7xl sm:mt-40 sm:px-6 lg:px-8">
-          <div className="relative isolate overflow-hidden bg-gray-700 px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16">
-            <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        {/* Logo Cloud Section */}
+        <div className="mx-auto mt-24 max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="relative isolate overflow-hidden bg-gray-700 px-6 py-16 text-center shadow-2xl sm:rounded-3xl sm:px-8">
+            <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
               Our customers love us
             </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg/8 text-gray-300">
-            “We Offer a Wide Range Of Integrated
-Levelled Human Resource Services Across
-Different Industries"
+            <p className="mx-auto mt-4 max-w-md text-base text-gray-300 sm:text-lg">
+              "We Offer a Wide Range Of Integrated Levelled Human Resource Services Across Different Industries"
             </p>
-            <div className="mx-auto mt-20 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:max-w-4xl lg:grid-cols-5">
-              <img
-                alt="Mohan Motors"
-                src={logo10.src}
-                width={158}
-                height={48}
-                className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-              />
-              <img
-                alt="Paharpur"
-                src={logo11.src}
-                width={158}
-                height={48}
-                className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-              />
-              <img
-                alt="Siddha Group"
-                src={logo12.src}
-                width={158}
-                height={48}
-                className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-              />
-              <img
-                alt="IFB"
-                src={logo14.src}
-                width={158}
-                height={48}
-                className="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
-              />
-              <img
-                alt="Ronak Optik India"
-                src={logo13.src}
-                width={158}
-                height={48}
-                className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-              />
-            </div>
-            <div
-              aria-hidden="true"
-              className="absolute -top-24 right-0 -z-10 transform-gpu blur-3xl"
-            >
-              <div
-                style={{
-                  clipPath:
-                    "polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)",
-                }}
-                className="aspect-1404/767 w-[87.75rem] bg-linear-to-r from-[#80caff] to-[#4f46e5] opacity-25"
-              />
+            <div className="mx-auto mt-12 grid max-w-lg grid-cols-2 items-center gap-8 sm:max-w-xl sm:grid-cols-3 sm:gap-10 lg:max-w-4xl lg:grid-cols-5">
+              {[logo10, logo11, logo12, logo13, logo14].map((logo, index) => (
+                <img
+                  key={index}
+                  src={logo.src}
+                  alt="Client logo"
+                  className="col-span-1 max-h-12 w-full object-contain"
+                />
+              ))}
             </div>
           </div>
         </div>
+
+   
+       
 
         {/* Content section */}
         <div className="mt-32 overflow-hidden sm:mt-40">
@@ -312,7 +242,7 @@ Different Industries"
         </div>
 
         {/* Content section */}
-        <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
+        <div className="mx-auto mt-32 max-w-7xl px-6 sm:my-40 lg:px-8">
           <div className="mx-auto flex max-w-2xl flex-col items-end justify-between gap-16 lg:mx-0 lg:max-w-none lg:flex-row">
             <div className="w-full lg:max-w-lg lg:flex-auto">
               <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl">
