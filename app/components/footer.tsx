@@ -1,5 +1,6 @@
 import Image from "next/image";
 import logo from "../../public/uppraisal-logo.png";
+import { Linkedin } from 'lucide-react';
 import {
   EnvelopeIcon,
   PhoneIcon,
@@ -113,15 +114,15 @@ export default function FooterSection() {
             <h3 className="text-sm/6 font-semibold text-white mb-3">Contact Us</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="tel:+918420623902" className="text-sm/6 flex text-gray-400 hover:text-white">
+                <a href="https://www.linkedin.com/in/sukanya-guha-das-17572034a/" className="text-sm/6 flex text-gray-400 hover:text-white">
                   <PhoneIcon className="h-5 w-5 mr-2" />
-                  <span>Sukanya Guha Das - 8420623902</span>
+                  <span className="flex gap-4" >Sukanya Guha Das -  <Linkedin className="h-5 w-5 mr-2"/></span>
                 </a>
               </li>
               <li>
-                <a href="tel:+918017003737" className="text-sm/6 flex text-gray-400 hover:text-white">
+                <a href="https://www.linkedin.com/in/jolly-chakraborty-77539b165/" className="text-sm/6 flex text-gray-400 hover:text-white">
                   <PhoneIcon className="h-5 w-5 mr-2" />
-                  <span>Jolly Chakraborty - 8017003737</span>
+                  <span className="flex gap-4 ">Jolly Chakraborty - <Linkedin className="h-5 w-5 mr-2"/> </span>
                 </a>
               </li>
               <li>

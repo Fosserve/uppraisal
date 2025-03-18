@@ -1,10 +1,10 @@
 "use client";
 
-import logo10 from "../../public/Clients_logos/mohan_motars.jpeg";
-import logo11 from "../../public/Clients_logos/paharpur-logo.png";
-import logo12 from "../../public/Clients_logos/siddha-group-logo.png";
-import logo13 from "../../public/Clients_logos/ronak_optik_india_private_limited_logo.jpeg";
-import logo14 from "../../public/Clients_logos/IFB.png";
+import logo10 from "../../public/Clients_logos/Ludlow.png";
+import logo11 from "../../public/Clients_logos/Suraksha.png";
+import logo12 from "../../public/Clients_logos/RTS.png";
+import logo13 from "../../public/Clients_logos/Signum.jpg";
+import logo14 from "../../public/Clients_logos/Tenty.png";
 import { HomeIcon } from '@heroicons/react/20/solid'
 import logo from "../../public/uppraisal-logo.png"
 import image1 from "../../public/team/img7.jpg";
@@ -158,35 +158,35 @@ Different Industries"
             </p>
             <div className="mx-auto mt-20 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:max-w-4xl lg:grid-cols-5">
               <img
-                alt="Mohan Motors"
+                alt="Logo1"
                 src={logo10.src}
                 width={158}
                 height={48}
                 className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
               />
               <img
-                alt="Paharpur"
+                alt="logo2"
                 src={logo11.src}
                 width={158}
                 height={48}
                 className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
               />
               <img
-                alt="Siddha Group"
+                alt="logo3"
                 src={logo12.src}
                 width={158}
                 height={48}
                 className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
               />
               <img
-                alt="IFB"
+                alt="logo4"
                 src={logo14.src}
                 width={158}
                 height={48}
                 className="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
               />
               <img
-                alt="Ronak Optik India"
+                alt="logo5"
                 src={logo13.src}
                 width={158}
                 height={48}
