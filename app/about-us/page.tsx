@@ -1,10 +1,10 @@
 "use client";
 
-import logo10 from "../../public/Clients_logos/mohan_motars.jpeg";
-import logo11 from "../../public/Clients_logos/paharpur-logo.png";
-import logo12 from "../../public/Clients_logos/siddha-group-logo.png";
-import logo13 from "../../public/Clients_logos/ronak_optik_india_private_limited_logo.jpeg";
-import logo14 from "../../public/Clients_logos/IFB.png";
+import logo10 from "../../public/Clients_logos/Ludlow.png";
+import logo11 from "../../public/Clients_logos/Suraksha.png";
+import logo12 from "../../public/Clients_logos/RTS.png";
+import logo13 from "../../public/Clients_logos/Signum.jpg";
+import logo14 from "../../public/Clients_logos/Tenty.png";
 import { HomeIcon } from '@heroicons/react/20/solid'
 import logo from "../../public/uppraisal-logo.png"
 import image1 from "../../public/team/img7.jpg";
@@ -122,15 +122,54 @@ export default function AboutUsPage() {
             <p className="mx-auto mt-4 max-w-md text-base text-gray-300 sm:text-lg">
               "We Offer a Wide Range Of Integrated Levelled Human Resource Services Across Different Industries"
             </p>
-            <div className="mx-auto mt-12 grid max-w-lg grid-cols-2 items-center gap-8 sm:max-w-xl sm:grid-cols-3 sm:gap-10 lg:max-w-4xl lg:grid-cols-5">
-              {[logo10, logo11, logo12, logo13, logo14].map((logo, index) => (
-                <img
-                  key={index}
-                  src={logo.src}
-                  alt="Client logo"
-                  className="col-span-1 max-h-12 w-full object-contain"
-                />
-              ))}
+            <div className="mx-auto mt-20 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:max-w-4xl lg:grid-cols-5">
+              <img
+                alt="Logo1"
+                src={logo10.src}
+                width={158}
+                height={48}
+                className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+              />
+              <img
+                alt="logo2"
+                src={logo11.src}
+                width={158}
+                height={48}
+                className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+              />
+              <img
+                alt="logo3"
+                src={logo12.src}
+                width={158}
+                height={48}
+                className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+              />
+              <img
+                alt="logo4"
+                src={logo14.src}
+                width={158}
+                height={48}
+                className="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
+              />
+              <img
+                alt="logo5"
+                src={logo13.src}
+                width={158}
+                height={48}
+                className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
+              />
+            </div>
+            <div
+              aria-hidden="true"
+              className="absolute -top-24 right-0 -z-10 transform-gpu blur-3xl"
+            >
+              <div
+                style={{
+                  clipPath:
+                    "polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)",
+                }}
+                className="aspect-1404/767 w-[87.75rem] bg-linear-to-r from-[#80caff] to-[#4f46e5] opacity-25"
+              />
             </div>
           </div>
         </div>

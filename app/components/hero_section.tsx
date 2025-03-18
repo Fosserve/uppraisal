@@ -1,3 +1,9 @@
+import image8 from "../../public/office-skyscrapers-business-district.jpg";
+import image7 from "../../public/team/img7.jpg";
+import image4 from "../../public/team/img2.jpg";
+import image3 from "../../public/team/img5.jpg";
+import image2 from "../../public/team/image1.jpg";
+import heroimage from "../../public/Herosection.jpg"
 import { ArrowRight } from "lucide-react";
 
 const images = [
@@ -33,16 +39,14 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
-          <div className="mt-10 lg:mt-0 lg:w-1/2 lg:pl-16">
-            <div className="h-64 w-64 sm:h-72 sm:w-72 md:h-96 md:w-96 lg:h-[500px] lg:w-[500px]">
-              <img
-                alt=""
-                src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2102&q=80"
-                className="size-full object-cover rounded-full"
-              />
-            </div>
-          </div>
         </div>
+        <div className="relative h-64 w-full sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:w-1/2">
+          <img
+            alt=""
+            src={image8.src}
+            className="absolute inset-0 size-full object-cover"
+          />
+        </div>  
       </main>
     </div>
   );

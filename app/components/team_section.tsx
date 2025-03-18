@@ -6,7 +6,7 @@ const people = [
     name: "Jolly Chakraborty",
     role: "Founder & Director",
     imageUrl: image1.src,
-    bio: "Jolly Chakraborty passed PGPRP from IISWBM Kolkata. She has extensive experience in the Manufacturing and Recruitment industry, specializing in HR & Administration, Recruitment, and Training Development. She has been running Uppraisal Consultant since 2015, overseeing client relations, team management, and business administration.",
+    bio: 'Jolly Chakraborty passed PGPRM from IISWBM Kolkata. She has extensive experience in the Manufacturing and Recruitment industry, specializing in HR & Administration, Recruitment, and Training Development. She has been running Uppraisal Consultant since 2015, overseeing client relations, team management, and business administration.',
   },
   {
     name: "Sukanya Guha Das",
