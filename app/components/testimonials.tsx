@@ -72,7 +72,7 @@ export default function Testimonials() {
                 <div className="font-semibold">{featuredTestimonial.author.name}</div>
                 <div className="text-gray-600">{`@${featuredTestimonial.author.handle}`}</div>
               </div>
-              <img src={featuredTestimonial.logoUrl} alt="logo" className="h-10 w-auto object-contain" />
+              {/* <img src={featuredTestimonial.logoUrl} alt="logo" className="h-10 w-auto object-contain" /> */}
             </figcaption>
           </figure>
           {testimonials.map((columnGroup, columnGroupIdx) => (
@@ -101,7 +101,7 @@ export default function Testimonials() {
                           <div className="font-semibold">{testimonial.author.name}</div>
                           <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
                         </div>
-                        <img src={testimonial.logoUrl} alt="logo" className="h-10 w-auto object-contain" />
+                        {/* <img src={testimonial.logoUrl} alt="logo" className="h-10 w-auto object-contain" /> */}
                       </figcaption>
                     </figure>
                   ))}

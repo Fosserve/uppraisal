@@ -5,18 +5,12 @@ import Image, { StaticImageData } from "next/image"
 import { Search } from "lucide-react"
 
 // Manually import images from the team folder
-import img1 from "../../public/team/img1.jpg";
-import img2 from "../../public/team/img2.jpg";
-import img3 from "../../public/team/img3.jpg";
-import img4 from "../../public/team/img4.jpg";
-import img5 from "../../public/team/img5.jpg";
-import img6 from "../../public/team/img6.jpg";
-import img7 from "../../public/team/img7.jpg";
-import img8 from "../../public/team/img8.jpg";
-import img9 from "../../public/team/img9.jpg";
-import img10 from "../../public/team/img10.jpg";
-
-const images: StaticImageData[] = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
+import img1 from './gallery/img1.jpeg';
+import img2 from './gallery/img2.jpeg';
+import img3 from './gallery/img3.jpeg';
+import img4 from './gallery/img4.jpeg';
+import img5 from './gallery/img5.jpeg';
+const staticImages: StaticImageData[] = [img1, img2, img3, img4, img5];
 
 // Define the image data structure
 interface ImageItem {
@@ -28,74 +22,24 @@ interface ImageItem {
   height: number
 }
 
-// Sample image data
-const imageData: ImageItem[] = [
-  // { id: "1", src: image1.src, alt: "Leaf with water droplets", category: ["Team"], width: 600, height: 400 },
-  // { id: "2", src: image2.src, alt: "Boats on a lake", category: ["Team"], width: 600, height: 400 },
-  // { id: "3", src: img1.src, alt: "Colorful pencils", category: ["Team"], width: 600, height: 400 },
-  // { id: "4", src: img2.src, alt: "Fresh fruits", category: ["Group", "Celebration"], width: 600, height: 400 },
-  // { id: "5", src: img3.src, alt: "Tree in winter", category: ["Celebration", "Gatherings"], width: 600, height: 400 },
-  // { id: "6", src: img4.src, alt: "Tree in autumn", category: ["Celebration"], width: 600, height: 400 },
-  // { id: "7", src: img5.src, alt: "City sunset", category: ["Group"], width: 600, height: 400 },
-  { id: "8", src: img6.src, alt: "Modern building", category: ["Gatherings", "Celebration"], width: 600, height: 400 },
-  // { id: "9", src: img7.src, alt: "Temple", category: ["Group"], width: 600, height: 400 },
-  // { id: "10", src: img8.src, alt: "Big Ben", category: ["Mettings" , "Gatherings"], width: 600, height: 400 },
-  // { id: "11", src: img9.src, alt: "Garage doors", category: ["Group", "Team"], width: 600, height: 400 },
-  // { id: "12", src: img10.src, alt: "Garage doors", category: ["Group", "Team"], width: 600, height: 400 },
-  { id: "13", src: img11.src, alt: "Garage doors", category: ["Celebration", "Team"], width: 600, height: 400 },
-  { id: "14", src: img12.src, alt: "Garage doors", category: ["Gatherings", "Celebration"], width: 600, height: 400 },
-  // { id: "15", src: img13.src, alt: "Garage doors", category: ["Group", "Team"], width: 600, height: 400 },
-  // { id: "16", src: img14.src, alt: "Garage doors", category: ["Group", "Mettings"], width: 600, height: 400 },
-  // { id: "17", src: img15.src, alt: "Garage doors", category: ["Gatherings", "Team"], width: 600, height: 400 },
-  { id: "18", src: img16.src, alt: "Garage doors", category: ["Group", "Celebration"], width: 600, height: 400 },
-  { id: "19", src: img17.src, alt: "Garage doors", category: ["Group", "Celebration"], width: 600, height: 400 },
-
-]
-
 export default function ImageGallery() {
-  const [images, setImages] = useState<ImageItem[]>(imageData)
-  // const [selectedCategory, setSelectedCategory] = useState<string>("All")
-  // const [searchTerm, setSearchTerm] = useState<string>("")
-
-  // const allCategories = ["All", ...new Set(imageData.flatMap((img) => img.category))]
-
-  // useEffect(() => {
-  //   let filtered = imageData
-
-  //   if (selectedCategory !== "All") {
-  //     filtered = filtered.filter((img) => img.category.includes(selectedCategory))
-  //   }
-
-  //   if (searchTerm) {
-  //     filtered = filtered.filter(
-  //       (img) =>
-  //         img.alt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-  //         img.category.some((cat) => cat.toLowerCase().includes(searchTerm.toLowerCase())),
-  //     )
-  //   }
-
-  //   setImages(filtered)
-  // }, [selectedCategory, searchTerm])
+  const [images, setImages] = useState<ImageItem[]>([])
+  
+  // Initialize with static images on component mount
+  useEffect(() => {
+    const initialImages = staticImages.map((img, index) => ({
+      id: `img-${index}`,
+      src: img.src,
+      alt: `Gallery image ${index + 1}`,
+      category: ['gallery'],
+      width: img.width,
+      height: img.height
+    }))
+    setImages(initialImages)
+  }, [])
 
   return (
     <div className="space-y-6">
-      {/* Filter Tabs */}
-      {/* <div className="flex flex-wrap justify-center gap-4">
-        {allCategories.map((category) => (
-          <button
-            key={category}
-            onClick={() => setSelectedCategory(category)}
-            className={`px-4 py-2 rounded-xl  transition-all font-semibold ${
-              selectedCategory === category
-                ? "bg-[#d6eeff] text-[#045be6] shadow-md border border-[#045be6]"
-                : "bg-gray-200 text-gray-800 hover:bg-[#b7e3ff] hover:text-[#045be6]"
-            }`}
-          >
-            {category}
-          </button>
-        ))}
-      </div> */}
-
       {/* Image Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
         {images.map((image) => (
@@ -107,7 +51,7 @@ export default function ImageGallery() {
               }}
             >
               <Image
-                src={image.src || "/placeholder.svg"}
+                src={image.src}
                 alt={image.alt}
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
@@ -118,23 +62,9 @@ export default function ImageGallery() {
                 }}
               />
             </div>
-            {/* Category tags */}
-            {/* <div className="absolute bottom-2 left-2 flex flex-wrap gap-1">
-              {image.category.map((cat) => (
-                <span key={`${image.id}-${cat}`} className="text-xs px-2 py-1 bg-black/70 text-white rounded-md">
-                  {cat}
-                </span>
-              ))}
-            </div> */}
           </div>
         ))}
       </div>
-
-      {images.length === 0 && (
-        <div className="text-center py-12">
-          <p className="text-gray-500">No images found. Try adjusting your filters.</p>
-        </div>
-      )}
     </div>
   )
 }

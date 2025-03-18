@@ -67,7 +67,7 @@ html {
 }
 
 .logo-cloud {
-  animation: logo-cloud 30s linear infinite;
+  animation: logo-cloud 60s linear infinite;
 }
 
 @keyframes logo-cloud {

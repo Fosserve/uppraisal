@@ -127,11 +127,11 @@ export default function FooterSection() {
               </li>
               <li>
                 <a
-                  href="mailto:uppraisalconsultant@gmail.com"
+                  href="mailto:hr@uppraisalconsultant.com"
                   className="text-sm/6 text-gray-400 flex hover:text-white"
                 >
                   <EnvelopeIcon className="h-5 w-5 mr-2" />
-                  <span>hr@uppraisalconsultant.in</span>
+                  <span>hr@uppraisalconsultant.com</span>
                 </a>
               </li>
               <li>
@@ -154,10 +154,10 @@ export default function FooterSection() {
             &copy; {new Date().getFullYear()} Uppraisal Consultant. All rights reserved.
           </p>
         </div>
-        <div className="flex gap-3 sm:justify-end mt-5 sm:mt-2 justify-center"> 
-          <p className="text-sm text-center text-gray-400">Designed by @</p>
-        <a href="https://fossap.in/" className="text-sm/6 flex text-gray-400 hover:text-white">
-                  <span className="text-[#045be6] text-md font-semibold">FOSS AP</span>
+        <div className="flex gap-1 sm:justify-end mt-3 sm:mt-2 justify-center"> 
+          <p className="text-sm text-center text-gray-400">Website developed by</p>
+        <a href="https://portfolio-website-ochre-gamma-18.vercel.app/" className="text-sm/6 flex text-gray-400 hover:text-white">
+                  <span className="text-[#045be6] text-md font-semibold">Hameedullah Shaik and Praveen Gunja</span>
         </a>
         </div>
       </div>
