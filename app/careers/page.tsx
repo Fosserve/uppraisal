@@ -57,7 +57,7 @@ export default function Timeline() {
         <div className="relative h-80 overflow-hidden bg-[#4bbcff] md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2 rounded-md">
           <img
             alt=""
-            src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=60&blend=6366F1&sat=-100&blend-mode=multiply"
+            src="https://media.istockphoto.com/id/1409520341/photo/group-of-young-people-discussing-in-the-co-working-office.jpg?s=612x612&w=0&k=20&c=MMScAoIbvQebCJ3dhr8pZ1izzuWxW_pBJ4yJ1KQfwpM="
             className="w-full h-full object-cover rounded-md mix-blend-multiply"
           />
         </div>
@@ -111,7 +111,7 @@ export default function Timeline() {
           <div className="bg-gray-800 rounded-3xl p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
             <img
               alt="Career page"
-              src={image1.src}
+              src={"https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
               className="w-full lg:w-1/2 h-96 lg:h-[20rem] object-cover rounded-2xl shadow-xl"
             />
             <div className="w-full lg:w-1/2 space-y-6">

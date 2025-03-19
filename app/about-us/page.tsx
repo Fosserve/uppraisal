@@ -195,8 +195,8 @@ export default function AboutUsPage() {
               <div className="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents">
                 <div className="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
                   <img
-                    alt=""
-                    src={image2.src}
+                    alt="vision"
+                    src="https://plus.unsplash.com/premium_photo-1683120730432-b5ea74bd9047?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     className="aspect-7/5 w-[37rem] max-w-none rounded-2xl bg-gray-50 object-cover"
                   />
                 </div>
@@ -204,7 +204,7 @@ export default function AboutUsPage() {
                   <div className="order-first flex w-64 flex-none justify-end self-end lg:w-auto">
                     <img
                       alt=""
-                      src={image4.src}
+                      src={"https://images.unsplash.com/photo-1535957998253-26ae1ef29506?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
                       className="aspect-4/3 w-[24rem] h-[16rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
                     />
                   </div>
@@ -218,7 +218,7 @@ export default function AboutUsPage() {
                   <div className="hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none">
                     <img
                       alt=""
-                      src={image3.src}
+                      src={"https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
                       className="aspect-4/3 w-[24rem] h-[20rem] max-w-none rounded-2xl bg-gray-50 object-cover"
                     />
                   </div>
