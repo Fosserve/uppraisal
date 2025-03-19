@@ -36,7 +36,7 @@ const Header = () => {
   }
 
   return (
-    <div className='bg-white'>
+    <div className='bg-white '>
       <header className="absolute bg-white inset-x-0 top-0 z-50">
         <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center p-6 lg:px-8">
           <div className="flex">

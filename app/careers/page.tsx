@@ -5,7 +5,7 @@ import { ChevronDownIcon } from "@heroicons/react/16/solid";
 import { HomeIcon } from '@heroicons/react/20/solid'
 import { CheckCircleIcon } from '@heroicons/react/20/solid'
 import logo from "../../public/uppraisal-logo.png"
-import image1 from "../../public/team/img9.jpg"
+import image1 from "../../public/careerpage.jpg"
 
 
 const pages = [
