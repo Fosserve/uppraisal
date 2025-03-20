@@ -73,7 +73,7 @@ export default function AboutUsPage() {
       <Header />
       <main className="isolate">
         {/* Hero Section */}
-        <div className="relative isolate -z-10 overflow-hidden bg-gradient-to-b from-indigo-100/20">
+        <div className="relative isolate -z-10 mt-10 overflow-hidden bg-gradient-to-b from-indigo-100/20">
           <div className="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white ring-1 shadow-xl shadow-[#035de5]/10 ring-[#edf8ff] sm:-mr-80 lg:-mr-96" />
           <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:max-w-none lg:grid lg:grid-cols-2 lg:gap-x-16 lg:gap-y-8 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
