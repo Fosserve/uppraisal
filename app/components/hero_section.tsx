@@ -17,16 +17,15 @@ const images = [
 export default function HeroSection() {
   return (
     <div className="bg-white">
-      
-      <main className="mx-auto w-full max-w-7xl pt-16 pb-20 lg:py-10">
-        <div className="flex flex-col lg:flex-row items-center">
-          <div className="px-6 sm:px-8 lg:w-1/2 lg:pr-16 text-center lg:text-left">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
-              <span className="block xl:inline">Elevate Your Business with Expert</span>{' '}
+      <main >
+        <div className="mx-auto mt-15 w-full max-w-7xl pt-32 pb-20 sm:text-center lg:py-48 lg:text-left">
+          <div className="px-6 sm:px-8 lg:w-1/2 xl:pr-16">
+            <h1 className="text-3xl pt-15 font-bold tracking-tight text-gray-900 sm:text-4xl md:text-5xl lg:text-5xl">
+              <span className="block xl:inline">Elevate Your Business with</span>{' '}
               <span className="block text-[#055be9] xl:inline">Consulting Solutions</span>
             </h1>
-            <p className="mx-auto mt-3 max-w-md text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
-              Discover what sets us apart. Our process, expertise, and commitment ensure success for both companies and candidates. Partnering with us brings distinct advantages, making the recruitment process seamless and effective.
+            <p className="mx-auto mt-3 max-w-md text-md text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
+            Discover what sets us apart. Our process, expertise, and commitment ensure success for both companies and candidates. Partnering with us brings distinct advantages, making the recruitment process seamless and effective.
             </p>
             <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
               <div className="rounded-md shadow-sm">

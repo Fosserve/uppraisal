@@ -7,7 +7,7 @@ import logo13 from "../../public/Clients_logos/Signum.jpg";
 import logo14 from "../../public/Clients_logos/Tenty.png";
 import { HomeIcon } from '@heroicons/react/20/solid'
 import logo from "../../public/uppraisal-logo.png"
-import image1 from "../../public/team/img7.jpg";
+import image1 from "../../public/team/About.jpg";
 import image2 from "../../public/team/img8.jpg";
 import image3 from "../../public/team/img6.jpg";
 import image4 from "../../public/team/img4.jpg";

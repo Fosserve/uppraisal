@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { CheckCircleIcon } from '@heroicons/react/20/solid'
-import image1 from "../../public/team/img9.jpg"
-import Header from "../components/header";
+import logo from "../../public/uppraisal-logo.png"
+import image1 from "../../public/careerpage.jpg"
+
 
 const pages = [
   { name: 'Careers', href: '/career', current: false },
