@@ -4,6 +4,7 @@ import React from 'react'
 import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import Image from "next/image"
 import logo from "../../public/uppraisal-logo.png"
 
 const navigation = [
@@ -16,16 +17,19 @@ const navigation = [
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   return (
-    <div className='bg-white'>
-       <header className="absolute inset-x-0 top-0 z-50">
+    <div className='bg-background'>
+      <header className="absolute inset-x-0 top-0 z-50">
         <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
           <div className="flex lg:flex-1">
             <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Uppraisal Consultant</span>
-              <img
+              <Image
                 alt="Uppraisal Consultant"
-                src={logo.src}
+                src={logo}
                 className="h-10 w-auto"
+                width={150}
+                height={40}
+                priority
               />
             </a>
           </div>
@@ -41,7 +45,7 @@ const Header = () => {
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-sm/6 font-semibold text-gray-900">
+              <a key={item.name} href={item.href} className="text-sm/6 font-semibold text-foreground hover:text-primary transition-colors">
                 {item.name}
               </a>
             ))}
@@ -54,10 +58,12 @@ const Header = () => {
             <div className="flex items-center justify-between">
               <a href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Uppraisal Consultant</span>
-                <img
+                <Image
                   alt="Uppraisal Consultant"
-                  src={logo.src}
+                  src={logo}
                   className="h-10 w-auto"
+                  width={150}
+                  height={40}
                 />
               </a>
               <button

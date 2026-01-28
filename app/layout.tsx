@@ -32,7 +32,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
       <body
-        className={`${poppins.variable} bg-white  antialiased`}
+        className={`${poppins.variable} bg-background text-foreground antialiased`}
       >
         <div>
           <main>{children}</main>

@@ -148,9 +148,20 @@ export default function FooterSection() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-800">
-          <p className="text-sm text-center text-gray-400">
+        <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-sm text-gray-400">
             &copy; {new Date().getFullYear()} Uppraisal Consultant. All rights reserved.
+          </p>
+          <p className="text-sm text-gray-400 mt-2 md:mt-0">
+            built by{" "}
+            <a
+              href="https://hamathopc.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              Hamath OPC PVT Ltd
+            </a>
           </p>
         </div>
       </div>

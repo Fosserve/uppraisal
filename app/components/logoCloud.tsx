@@ -41,9 +41,9 @@ const logos: Logo[] = [
 
 export default function LogoCloud() {
   return (
-    <div className="bg-white py-12 sm:py-16 overflow-hidden">
+    <div className="bg-background py-12 sm:py-16 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <h2 className="text-lg sm:text-center font-semibold text-gray-900">
+        <h2 className="text-lg sm:text-center font-semibold text-foreground">
           Trusted by the world’s most innovative teams
         </h2>
         <div className="relative mt-10 flex space-x-9 overflow-hidden logo-cloud w-max">
@@ -62,7 +62,7 @@ export default function LogoCloud() {
           </div>
         </div>
         <div className="mt-16 flex justify-center">
-          <p className="relative rounded-full bg-gray-50 px-4 py-1.5 text-sm text-gray-600 ring-1 ring-gray-900/5">
+          <p className="relative rounded-full bg-muted px-4 py-1.5 text-sm text-muted-foreground ring-1 ring-border">
             <span className="hidden md:inline">
               Over 25+ companies use our tools to better their business.
             </span>
