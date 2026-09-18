@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import image8 from "../../public/hero-skyscrapers.jpg";
+import image8 from "../../public/office-skyscrapers-business-district.jpg";
 import { ArrowRight, Check, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -67,7 +67,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="relative min-h-[380px] sm:min-h-[460px] lg:min-h-[520px]"
+            className="relative w-full h-[380px] sm:h-[460px] lg:h-[540px]"
           >
             {/* Decorative Floating Elements */}
             <div className="absolute -right-4 -top-6 h-28 w-28 rounded-full border border-blue-200/80 animate-float sm:-right-8" />

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import careerImage from "../../public/careerpage.jpg";
 import Header from "../components/header";
 import { CheckCircle2, ArrowRight, Briefcase, Sparkles, ExternalLink, Mail, Award, Clock, DollarSign, HeartHandshake } from "lucide-react";
 import { motion } from "framer-motion";
@@ -222,7 +223,7 @@ export default function CareersPage() {
               >
                 <Image
                   alt="Inclusive team culture"
-                  src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=1200&q=80"
+                  src={careerImage}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
