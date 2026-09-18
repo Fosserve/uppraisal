@@ -180,14 +180,14 @@ export default function FooterSection() {
             &copy; {new Date().getFullYear()} Uppraisal Consultant. All rights reserved.
           </p>
           <div className="flex items-center gap-1.5 text-slate-400">
-            <span>Website developed by</span>
+            <span>Built by</span>
             <a
-              href="https://portfolio-website-ochre-gamma-18.vercel.app/"
+              href="https://hamathopc.in"
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold text-blue-400 hover:text-blue-300 transition-colors"
             >
-              Hameedullah Shaik &amp; Praveen Gunja
+              Hamathopc Pvt Ltd <span className="text-slate-400 font-normal">(hamathopc.in)</span>
             </a>
           </div>
         </div>
