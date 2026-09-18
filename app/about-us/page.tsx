@@ -1,327 +1,421 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
+import Header from "../components/header";
+import image1 from "../../public/team/about-team.jpg";
 import logo10 from "../../public/Clients_logos/Ludlow.png";
 import logo11 from "../../public/Clients_logos/Suraksha.png";
 import logo12 from "../../public/Clients_logos/RTS.png";
 import logo13 from "../../public/Clients_logos/Signum.jpg";
 import logo14 from "../../public/Clients_logos/Tenty.png";
-import { HomeIcon } from '@heroicons/react/20/solid'
-import logo from "../../public/uppraisal-logo.png"
-import image1 from "../../public/team/About.jpg";
-import image2 from "../../public/team/img8.jpg";
-import image3 from "../../public/team/img6.jpg";
-import image4 from "../../public/team/img4.jpg";
-import Header from "../components/header";
+import {
+  ShieldCheck,
+  Handshake,
+  Target,
+  Users2,
+  Calendar,
+  Sparkles,
+  ArrowRight,
+  CheckCircle2,
+  TrendingUp,
+} from "lucide-react";
+import { motion } from "framer-motion";
 
 const timeline = [
   {
-    name: "Establishment of UPPRAISAL CONSULTANT",
-    description: "Founded in Kolkata to provide integrated HR solutions for industries, startups, and MNCs.",
-    date: "2015-01",
-    dateTime: "2021-08",
+    year: "2015",
+    name: "Inception & Establishment",
+    description:
+      "Founded in Kolkata to deliver compliant, high-retention HR advisory and permanent staffing solutions across Eastern India.",
   },
   {
-    name: "Expansion to Multisector Services",
-    description: "Diversified offerings to serve a wide range of industries with tailored HR solutions.",
-    date: "2017-06",
-    dateTime: "2021-12",
+    year: "2017",
+    name: "Multisector Service Expansion",
+    description:
+      "Diversified into IT/Software, Manufacturing, BFSI, and Hospitality verticals with tailored executive search models.",
   },
   {
-    name: "Recognition as a Leading Consultant",
-    description: "Achieved recognition as one of the leading HR consultants in the Eastern Zone.",
-    date: "2020-03",
-    dateTime: "2022-02",
+    year: "2020",
+    name: "Regional Leadership Recognition",
+    description:
+      "Recognized among the Eastern Zone's premier employment consultancies, crossing 5,000+ placed professionals.",
   },
   {
-    name: "Commitment to Excellence",
-    description: "Continuing to deliver innovative HR services with a client-first approach.",
-    date: "2025-01",
-    dateTime: "2022-12",
+    year: "2025+",
+    name: "Pan-India Enterprise Scaling",
+    description:
+      "Continuing rapid expansion nationwide with tech-enabled candidate matching, payroll management, and corporate workshops.",
   },
 ];
 
-const Values = [
+const values = [
   {
     id: 1,
-    name: "Honesty: The Pillar of Integrity",
-    description: "We believe in being transparent and truthful in all our interactions. Honesty is not just a value but the foundation of trust, ensuring our clients and employees can always rely on us.",
+    name: "Honesty & Integrity",
+    description:
+      "We operate with transparent truthfulness in candidate representations, client billing, and compliance advisory.",
+    icon: ShieldCheck,
+    color: "from-blue-600 to-cyan-600",
   },
   {
     id: 2,
-    name: "Trust: Building Lasting Partnerships",
-    description: "Trust is at the heart of everything we do. We strive to earn and maintain the trust of our clients, employees, and partners by consistently delivering on our promises.",
+    name: "Enduring Trust",
+    description:
+      "Trust is earned through consistent execution. We cultivate decade-long client relationships anchored on accountability.",
+    icon: Handshake,
+    color: "from-indigo-600 to-blue-600",
   },
   {
     id: 3,
-    name: "Value-Centricity: Putting Clients First",
-    description: "We are committed to delivering exceptional value to our clients by understanding their unique needs and providing tailored solutions.",
+    name: "Value-Centricity",
+    description:
+      "Every candidate presented and policy implemented is engineered to generate measurable ROI and organizational stability.",
+    icon: Target,
+    color: "from-cyan-600 to-blue-600",
   },
   {
-    id: 5,
-    name: "Collaboration: Together We Achieve More",
-    description: "We believe in the power of teamwork. By fostering collaboration among our team and with our clients, we create innovative solutions that address complex challenges.",
-  }
+    id: 4,
+    name: "High-Synergy Collaboration",
+    description:
+      "We operate as an extension of your internal talent acquisition team, co-creating customized hiring frameworks.",
+    icon: Users2,
+    color: "from-blue-500 to-indigo-600",
+  },
 ];
 
-const pages = [
-  { name: 'About Us', href: '/about-us', current: false },
-]
+const clientLogos = [
+  { name: "Ludlow", src: logo10 },
+  { name: "Suraksha", src: logo11 },
+  { name: "RTS", src: logo12 },
+  { name: "Signum", src: logo13 },
+  { name: "Tenty", src: logo14 },
+];
 
 export default function AboutUsPage() {
   return (
-    <div className="bg-white">
+    <div className="bg-[#fbfaf6] min-h-screen">
       <Header />
+
       <main className="isolate">
         {/* Hero Section */}
-        <div className="relative isolate -z-10 mt-10 overflow-hidden bg-gradient-to-b from-indigo-100/20">
-          <div className="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white ring-1 shadow-xl shadow-[#035de5]/10 ring-[#edf8ff] sm:-mr-80 lg:-mr-96" />
-          <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl lg:max-w-none lg:grid lg:grid-cols-2 lg:gap-x-16 lg:gap-y-8 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
-              <h1 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-7xl">
-                Leading HR Solutions in Eastern India Since 2015
-              </h1>
-              <div className="my-6 max-w-7xl lg:mt-0 xl:col-end-1 xl:row-start-1">
-                <p className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed">
-                  Since 2015, <span className="text-blue-600">UPPRAISAL CONSULTANT</span> has established itself as a premier HR solutions provider in Eastern India, with a strong presence in Kolkata. We specialize in delivering comprehensive, multi-level human resource services tailored to diverse industries - from emerging startups to established multinational corporations. Our commitment to timely, efficient, and customized solutions has made us a trusted partner for organizations seeking to optimize their workforce potential.
+        <section className="relative overflow-hidden py-16 sm:py-24">
+          {/* Subtle Background Gradients */}
+          <div className="pointer-events-none absolute -right-40 -top-40 -z-10 h-96 w-96 rounded-full bg-blue-200/40 blur-3xl" />
+          <div className="pointer-events-none absolute -left-40 top-1/2 -z-10 h-80 w-80 rounded-full bg-indigo-100/50 blur-3xl" />
+
+          <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+            <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200/80 px-3.5 py-1 text-xs font-semibold text-blue-700 mb-5">
+                  <Sparkles className="h-3.5 w-3.5 text-blue-600" />
+                  <span>About Uppraisal Consultant</span>
+                </div>
+
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.1]">
+                  Leading HR Solutions in Eastern India{" "}
+                  <span className="gradient-text">Since 2015.</span>
+                </h1>
+
+                <p className="mt-6 text-base sm:text-lg leading-relaxed text-slate-600">
+                  Since 2015, <strong className="text-slate-900 font-semibold">UPPRAISAL CONSULTANT</strong> has established itself as a premier human resources advisory firm headquartered in Kolkata. We provide integrated recruitment, payroll compliance, and executive talent search tailored to fast-scaling startups and Fortune-tier MNCs across India.
                 </p>
-              </div>
-              <img
-                alt=""
-                src={image1.src}
-                className="mt-8 aspect-[6/5] w-full rounded-2xl object-cover sm:mt-12 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-16"
-              />
+
+                <p className="mt-4 text-base leading-relaxed text-slate-600">
+                  Our core philosophy unites deep psychological understanding with systematic competency mapping—ensuring our corporate partners hire individuals who not only match job descriptions, but elevate company culture and productivity.
+                </p>
+
+                <div className="mt-8 flex flex-wrap gap-4">
+                  <Link
+                    href="/services"
+                    className="group inline-flex items-center rounded-full bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition-all hover:bg-blue-700 hover:-translate-y-0.5"
+                  >
+                    <span>Our Consulting Services</span>
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                  <Link
+                    href="/careers"
+                    className="inline-flex items-center rounded-full bg-white border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 shadow-xs transition-all hover:bg-slate-50 hover:text-blue-600 hover:border-slate-300"
+                  >
+                    <span>Explore Open Roles</span>
+                  </Link>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.65, delay: 0.15 }}
+                className="relative"
+              >
+                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/10">
+                  <Image
+                    alt="Uppraisal Consultant Headquarters"
+                    src={image1}
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
+                  <div className="absolute bottom-6 left-6 right-6 text-white">
+                    <p className="text-xs font-semibold uppercase tracking-widest text-blue-300">Headquartered in Kolkata</p>
+                    <p className="text-lg font-bold">Bridging Ambition with Human Capital</p>
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </div>
-          <div className="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-white sm:h-32" />
-        </div>
+        </section>
 
-        {/* Timeline Section */}
-        <div className="mx-auto -mt-8 max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:max-w-none lg:grid-cols-4">
-            {timeline.map((item) => (
-              <div key={item.name} className="p-4">
-                <time dateTime={item.dateTime} className="flex items-center text-sm font-semibold text-[#035de5]">
-                  <svg viewBox="0 0 4 4" className="mr-2 h-1 w-1 flex-none">
-                    <circle r={2} cx={2} cy={2} fill="currentColor" />
-                  </svg>
-                  {item.date}
-                </time>
-                <p className="mt-4 text-lg font-semibold text-gray-900">{item.name}</p>
-                <p className="mt-2 text-base text-gray-600">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Logo Cloud Section */}
-        <div className="mx-auto mt-24 max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="relative isolate overflow-hidden bg-gray-700 px-6 py-16 text-center shadow-2xl sm:rounded-3xl sm:px-8">
-            <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
-              Our customers love us
-            </h2>
-            <p className="mx-auto mt-4 max-w-md text-base text-gray-300 sm:text-lg">
-              "We Offer a Wide Range Of Integrated Levelled Human Resource Services Across Different Industries"
-            </p>
-            <div className="mx-auto mt-20 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:max-w-4xl lg:grid-cols-5">
-              <img
-                alt="Logo1"
-                src={logo10.src}
-                width={158}
-                height={48}
-                className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-              />
-              <img
-                alt="logo2"
-                src={logo11.src}
-                width={158}
-                height={48}
-                className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-              />
-              <img
-                alt="logo3"
-                src={logo12.src}
-                width={158}
-                height={48}
-                className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-              />
-              <img
-                alt="logo4"
-                src={logo14.src}
-                width={158}
-                height={48}
-                className="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
-              />
-              <img
-                alt="logo5"
-                src={logo13.src}
-                width={158}
-                height={48}
-                className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-              />
+        {/* Milestone Timeline */}
+        <section className="bg-white py-20 sm:py-24 border-y border-slate-200/60">
+          <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+            <div className="text-center max-w-2xl mx-auto mb-16">
+              <p className="eyebrow justify-center">
+                <Calendar className="h-3.5 w-3.5" />
+                Our Journey
+              </p>
+              <h2 className="section-title">Milestones of Continuous Growth</h2>
+              <p className="section-subtitle mx-auto">
+                A decade of client commitment, geographic scaling, and talent enablement across Eastern India and beyond.
+              </p>
             </div>
-            <div
-              aria-hidden="true"
-              className="absolute -top-24 right-0 -z-10 transform-gpu blur-3xl"
-            >
-              <div
-                style={{
-                  clipPath:
-                    "polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)",
-                }}
-                className="aspect-1404/767 w-[87.75rem] bg-linear-to-r from-[#80caff] to-[#4f46e5] opacity-25"
-              />
+
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 relative">
+              {timeline.map((item, idx) => (
+                <motion.div
+                  key={item.year}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  className="relative rounded-2xl border border-slate-200/90 bg-[#fbfaf6] p-6 shadow-xs transition-all duration-300 hover:border-blue-300 hover:shadow-lg hover:-translate-y-1"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-2xl font-black text-blue-600 font-mono tracking-tight">
+                      {item.year}
+                    </span>
+                    <span className="flex h-2.5 w-2.5 rounded-full bg-blue-600" />
+                  </div>
+                  <h3 className="mt-4 text-base font-bold text-slate-900 leading-snug">
+                    {item.name}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                    {item.description}
+                  </p>
+                </motion.div>
+              ))}
             </div>
           </div>
-        </div>
+        </section>
 
-   
-       
+        {/* Mission & Vision Section */}
+        <section className="py-20 sm:py-28 overflow-hidden">
+          <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+            <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <p className="eyebrow">Strategic Purpose</p>
+                <h2 className="section-title">Our Mission &amp; Vision</h2>
+                
+                <div className="mt-8 space-y-6">
+                  <div className="rounded-2xl bg-white border border-slate-200/80 p-6 shadow-xs">
+                    <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+                      <Target className="h-5 w-5 text-blue-600" />
+                      Our Mission
+                    </h3>
+                    <p className="mt-2.5 text-sm sm:text-base leading-relaxed text-slate-600">
+                      To solve critical HR and staffing challenges for our clients, cultivate permanent partnerships, and drive their competitiveness. We deliver unique, data-backed human capital solutions aligned with specific business targets.
+                    </p>
+                  </div>
 
-        {/* Content section */}
-        <div className="mt-32 overflow-hidden sm:mt-40">
-          <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
-            <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:max-w-none lg:min-w-full lg:flex-none lg:gap-y-8">
-              <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
-                <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                  Our Mission & Vision
-                </h2>
-                <p className="mt-6 text-xl/8 text-gray-600">
-                Our Mission is to address and solve key HR needs of our clients, develop long lasting partnerships with them, and ensure their success in growth, development and competitiveness in their respective industries. We are committed to offering our best possible and unique HR solutions to each of our clients, aligning with their specific business goals and objectives.
-                </p>
-                <p className="mt-6 text-base/7 text-gray-600">
-                Our Vision is to become a leading HR Consulting Company in India, adhering to our core principles and values for our stakeholders.
-                </p>
-              </div>
-              <div className="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents">
-                <div className="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
-                  <img
-                    alt="vision"
-                    src="https://plus.unsplash.com/premium_photo-1683120730432-b5ea74bd9047?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    className="aspect-7/5 w-[37rem] max-w-none rounded-2xl bg-gray-50 object-cover"
+                  <div className="rounded-2xl bg-white border border-slate-200/80 p-6 shadow-xs">
+                    <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+                      <TrendingUp className="h-5 w-5 text-blue-600" />
+                      Our Vision
+                    </h3>
+                    <p className="mt-2.5 text-sm sm:text-base leading-relaxed text-slate-600">
+                      To be recognized as India’s most trusted HR consulting firm, upholding absolute transparency, client value-creation, and employee growth for every stakeholder we touch.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="grid grid-cols-2 gap-4"
+              >
+                <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-md">
+                  <Image
+                    alt="Corporate meeting"
+                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
-                <div className="contents lg:col-span-2 lg:col-end-2 lg:ml-auto lg:flex lg:w-[37rem] lg:items-start lg:justify-end lg:gap-x-8">
-                  <div className="order-first flex w-64 flex-none justify-end self-end lg:w-auto">
-                    <img
-                      alt=""
-                      src={"https://images.unsplash.com/photo-1535957998253-26ae1ef29506?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
-                      className="aspect-4/3 w-[24rem] h-[16rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
-                    />
-                  </div>
-                  <div className="flex w-96 flex-auto justify-end lg:w-auto lg:flex-none">
-                    <img
-                      alt=""
-                      src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1152&h=842&q=80"
-                      className="aspect-7/5 w-[37rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
-                    />
-                  </div>
-                  <div className="hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none">
-                    <img
-                      alt=""
-                      src={"https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
-                      className="aspect-4/3 w-[24rem] h-[20rem] max-w-none rounded-2xl bg-gray-50 object-cover"
-                    />
-                  </div>
+                <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-md mt-6">
+                  <Image
+                    alt="Executive collaboration"
+                    src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80"
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-500 hover:scale-105"
+                  />
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
-              We approach work as a place to make the world better
-            </h2>
-            <p className="mt-6 text-base/7 text-gray-600">
-              At UPPRAISAL CONSULTANT, we prioritize our clients as valued partners, ensuring our solutions provide long-term benefits. Our services offer the following advantages:
-            </p>
-          </div>
-          <div className="mx-auto mt-16 flex max-w-2xl flex-col gap-8 lg:mx-0 lg:mt-20 lg:max-w-none lg:flex-row lg:items-end">
-            <div className="flex flex-col-reverse justify-between gap-x-16 gap-y-8 rounded-2xl bg-gray-50 p-8 sm:w-3/4 sm:max-w-md sm:flex-row-reverse sm:items-end lg:w-72 lg:max-w-none lg:flex-none lg:flex-col lg:items-start">
-              <p className="flex-none text-3xl font-bold tracking-tight text-gray-900">
-                1000+
+        {/* Impact Metrics */}
+        <section className="bg-slate-950 py-20 sm:py-24 text-white relative overflow-hidden">
+          <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+            <div className="max-w-2xl">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-400">
+                Measurable Impact
               </p>
-              <div className="sm:w-80 sm:shrink lg:w-auto lg:flex-none">
-                <p className="text-lg font-semibold tracking-tight text-gray-900">
-                Quality Candidates
-                </p>
-                <p className="mt-2 text-base/7 text-gray-600">
-                We deliver top-tier talent to meet your specific needs, enhancing your team's capabilities.
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-col-reverse justify-between gap-x-16 gap-y-8 rounded-2xl bg-gray-900 p-8 sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-sm lg:flex-auto lg:flex-col lg:items-start lg:gap-y-44">
-              <p className="flex-none text-3xl font-bold tracking-tight text-white">
-                1500+
-              </p>
-              <div className="sm:w-80 sm:shrink lg:w-auto lg:flex-none">
-                <p className="text-lg font-semibold tracking-tight text-white">
-                Enhanced Productivity
-                </p>
-                <p className="mt-2 text-base/7 text-gray-400">
-                By placing the right individuals in the right positions, we boost overall organizational efficiency and performance.
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-col-reverse justify-between gap-x-16 gap-y-8 rounded-2xl bg-[#035de5] p-8 sm:w-11/12 sm:max-w-xl sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-none lg:flex-auto lg:flex-col lg:items-start lg:gap-y-28">
-              <p className="flex-none text-3xl font-bold tracking-tight text-white">
-                15+
-              </p>
-              <div className="sm:w-80 sm:shrink lg:w-auto lg:flex-none">
-                <p className="text-lg font-semibold tracking-tight text-white">
-                Flexible, Customized Services
-                </p>
-                <p className="mt-2 text-base/7 text-[#b6e4ff]">
-                We adapt our offerings to align with your evolving requirements, ensuring our solutions remain relevant and effective.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Content section */}
-        <div className="mx-auto mt-32 max-w-7xl px-6 sm:my-40 lg:px-8">
-          <div className="mx-auto flex max-w-2xl flex-col items-end justify-between gap-16 lg:mx-0 lg:max-w-none lg:flex-row">
-            <div className="w-full lg:max-w-lg lg:flex-auto">
-              <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl">
-              Our Core Values: The Foundation of Our Success
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                Advancing Workplaces Across the Nation
               </h2>
-              <p className="mt-6 text-xl/8 text-gray-600">
-              At UPPRAISAL CONSULTANT, our values guide every decision we make and every service we provide. They define who we are, shape our culture, and enable us to deliver exceptional value to our clients and partners. Here are five of our key values, elaborated to reflect their significance in our work:
+              <p className="mt-4 text-sm sm:text-base leading-relaxed text-slate-300">
+                At Uppraisal Consultant, we treat every hiring engagement as a long-term catalyst for growth and operational excellence.
               </p>
-              <img
-                alt=""
-                src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1344&h=1104&q=80"
-                className="mt-16 aspect-6/5 w-full rounded-2xl bg-gray-50 object-cover lg:aspect-auto lg:h-[34.5rem]"
-              />
             </div>
-            <div className="w-full lg:max-w-xl lg:flex-auto">
-              <h3 className="sr-only">Job openings</h3>
-              <ul className="-my-8 divide-y divide-gray-100">
-                {Values.map((opening) => (
-                  <li key={opening.id} className="py-8">
-                    <dl className="relative flex flex-wrap gap-x-3">
-                      <dt className="sr-only">Name</dt>
-                      <dd className="w-full flex-none text-lg font-semibold tracking-tight text-gray-900">
-                          {opening.name}
-                          <span
-                            aria-hidden="true"
-                            className="absolute inset-0"
-                          />
-                      </dd>
-                      <dt className="sr-only">Description</dt>
-                      <dd className="mt-2 w-full flex-none text-base/7 text-gray-600">
-                        {opening.description}
-                      </dd>
-                      <dt className="sr-only">Salary</dt>
-                    </dl>
-                  </li>
-                ))}
-              </ul>
+
+            <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-3">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="rounded-3xl border border-slate-800 bg-slate-900/80 p-8"
+              >
+                <p className="text-4xl sm:text-5xl font-extrabold text-blue-400 font-mono">
+                  10,000+
+                </p>
+                <h3 className="mt-4 text-lg font-bold text-white">
+                  Verified Candidate Pool
+                </h3>
+                <p className="mt-2 text-sm text-slate-400 leading-relaxed">
+                  Rigorous pre-screening and qualification guarantees ready-to-deploy talent for fast-track recruitment.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="rounded-3xl border border-slate-800 bg-slate-900/80 p-8"
+              >
+                <p className="text-4xl sm:text-5xl font-extrabold text-white font-mono">
+                  2,000+
+                </p>
+                <h3 className="mt-4 text-lg font-bold text-white">
+                  Successful Placements
+                </h3>
+                <p className="mt-2 text-sm text-slate-400 leading-relaxed">
+                  Strategic matching of candidates to organizational positions dramatically bolsters operational productivity.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="rounded-3xl border border-blue-500/40 bg-gradient-to-br from-blue-600/30 to-slate-900 p-8"
+              >
+                <p className="text-4xl sm:text-5xl font-extrabold text-blue-300 font-mono">
+                  15+
+                </p>
+                <h3 className="mt-4 text-lg font-bold text-white">
+                  Industry Verticals
+                </h3>
+                <p className="mt-2 text-sm text-slate-300 leading-relaxed">
+                  Dynamic domain expertise adapting agile HR structures for tech, core manufacturing, retail, and hospitality.
+                </p>
+              </motion.div>
             </div>
           </div>
-        </div>
+        </section>
+
+        {/* Core Values Section */}
+        <section className="py-20 sm:py-28 bg-white border-t border-slate-200/60">
+          <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+            <div className="text-center max-w-2xl mx-auto mb-16">
+              <p className="eyebrow justify-center">Foundational Pillars</p>
+              <h2 className="section-title">Our Core Values</h2>
+              <p className="section-subtitle mx-auto">
+                These principles guide every decision we make, dictate our client engagements, and foster a culture of excellence.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {values.map((val, idx) => {
+                const Icon = val.icon;
+                return (
+                  <motion.div
+                    key={val.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: idx * 0.1 }}
+                    className="group rounded-2xl border border-slate-200/80 bg-[#fbfaf6] p-7 transition-all duration-300 hover:border-blue-300 hover:bg-white hover:shadow-xl hover:-translate-y-1"
+                  >
+                    <div className={`inline-flex items-center justify-center rounded-xl bg-gradient-to-br ${val.color} p-3 text-white shadow-md shadow-blue-500/15`}>
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <h3 className="mt-5 text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                      {val.name}
+                    </h3>
+                    <p className="mt-2.5 text-sm leading-relaxed text-slate-600">
+                      {val.description}
+                    </p>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Clients Badge Section */}
+        <section className="py-16 bg-[#fbfaf6] border-t border-slate-200/60">
+          <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10 text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500 mb-8">
+              Key Client Associations
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-14">
+              {clientLogos.map((c) => (
+                <div
+                  key={c.name}
+                  className="flex items-center justify-center rounded-2xl bg-white border border-slate-200/80 px-6 py-4 shadow-xs"
+                >
+                  <Image
+                    src={c.src}
+                    alt={c.name}
+                    width={130}
+                    height={45}
+                    className="h-10 w-28 object-contain"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   );

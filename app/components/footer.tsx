@@ -1,13 +1,12 @@
+import Link from "next/link";
 import Image from "next/image";
 import logo from "../../public/uppraisal-logo.png";
-import { Linkedin } from 'lucide-react';
+import { Linkedin } from "lucide-react";
 import {
   EnvelopeIcon,
-  PhoneIcon,
   MapPinIcon,
 } from "@heroicons/react/24/outline";
-
-import { JSX, type SVGProps } from 'react'
+import { JSX } from "react";
 
 interface NavigationItem {
   name: string;
@@ -22,8 +21,9 @@ const navigation = {
   main: [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about-us" },
-    { name: "Career", href: "/career" },
+    { name: "Careers", href: "/careers" },
     { name: "Our Services", href: "/services" },
+    { name: "Gallery", href: "/Gallery" },
   ] as NavigationItem[],
   social: [
     {
@@ -57,80 +57,106 @@ const navigation = {
 
 export default function FooterSection() {
   return (
-    <footer id="footer" className="bg-gray-900">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer id="footer" className="bg-slate-950 text-slate-400 border-t border-slate-800">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10 py-16 lg:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+          {/* Company Brand Column */}
           <div className="space-y-6">
-            <Image
-              src={logo.src}
-              alt="Uppraisal Consultant"
-              width={150}
-              height={40}
-              className="h-10 w-auto"
-            />
-            <p className="text-sm text-gray-400 max-w-xs">
-              Making the world a better place through Uppraisal Consultant
+            <Link href="/" className="inline-block">
+              <Image
+                src={logo}
+                alt="Uppraisal Consultant"
+                width={160}
+                height={42}
+                className="h-10 w-auto bg-white/95 rounded-lg px-2 py-1 object-contain"
+              />
+            </Link>
+            <p className="text-sm leading-relaxed text-slate-400 max-w-sm">
+              Empowering ambitious organizations with strategic talent acquisition, executive search, and compliant HR systems since 2015.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex items-center space-x-3 pt-2">
               {navigation.social.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-400 hover:text-gray-300 transition-colors"
+                  className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-900 text-slate-400 hover:bg-blue-600 hover:text-white transition-all duration-200"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={item.name}
                 >
-                  <span className="sr-only">{item.name}</span>
-                  <item.icon aria-hidden="true" className="h-6 w-6" />
+                  <item.icon aria-hidden="true" className="h-4 w-4" />
                 </a>
               ))}
             </div>
           </div>
 
+          {/* Quick Links Column */}
           <div>
-            <h3 className="text-sm/6 font-semibold text-white mb-3">Quick Links</h3>
-            <ul className="space-y-2">
+            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-white mb-5">
+              Quick Links
+            </h3>
+            <ul className="space-y-3 text-sm">
               {navigation.main.map((item) => (
                 <li key={item.name}>
-                  <a href={item.href} className="hover:text-white text-gray-400 transition-colors">
-                    {item.name}
-                  </a>
+                  <Link
+                    href={item.href}
+                    className="hover:text-white transition-colors duration-150 inline-flex items-center gap-1.5"
+                  >
+                    <span className="text-blue-500 text-xs">›</span>
+                    <span>{item.name}</span>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
+          {/* Office Location Column */}
           <div>
-            <h3 className="text-sm/6 font-semibold text-white mb-3">Office Location</h3>
-            <address className="not-italic text-gray-400 text-sm space-y-1">
-              <p>Emami City Tower,</p>
-              <p>Floor-9, Room No.- 903,</p>
-              <p>Jessore Road, Near Nager Bazar,</p>
-              <p>Kolkata – 700028, W.B.</p>
+            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-white mb-5">
+              Corporate Office
+            </h3>
+            <address className="not-italic text-sm text-slate-400 space-y-2 leading-relaxed">
+              <p className="font-semibold text-white">Emami City Tower</p>
+              <p>Floor-9, Room No. 903</p>
+              <p>Jessore Road, Near Nager Bazar</p>
+              <p>Kolkata – 700028, West Bengal, India</p>
             </address>
           </div>
 
+          {/* Direct Contact Column */}
           <div>
-            <h3 className="text-sm/6 font-semibold text-white mb-3">Contact Us</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-white mb-5">
+              Leadership & Contact
+            </h3>
+            <ul className="space-y-3.5 text-sm">
               <li>
-                <a href="https://www.linkedin.com/in/sukanya-guha-das-17572034a/" className="text-sm/6 flex text-gray-400 hover:text-white">
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  <span className="flex gap-4" >Sukanya Guha Das -  <Linkedin className="h-5 w-5 mr-2"/></span>
+                <a
+                  href="https://www.linkedin.com/in/sukanya-guha-das-17572034a/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 text-slate-400 hover:text-blue-400 transition-colors group"
+                >
+                  <Linkedin className="h-4 w-4 text-blue-500 flex-shrink-0" />
+                  <span>Sukanya Guha Das (HR Head)</span>
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/jolly-chakraborty-77539b165/" className="text-sm/6 flex text-gray-400 hover:text-white">
-                  <PhoneIcon className="h-5 w-5 mr-2" />
-                  <span className="flex gap-4 ">Jolly Chakraborty - <Linkedin className="h-5 w-5 mr-2"/> </span>
+                <a
+                  href="https://www.linkedin.com/in/jolly-chakraborty-77539b165/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 text-slate-400 hover:text-blue-400 transition-colors group"
+                >
+                  <Linkedin className="h-4 w-4 text-blue-500 flex-shrink-0" />
+                  <span>Jolly Chakraborty (Director)</span>
                 </a>
               </li>
               <li>
                 <a
                   href="mailto:hr@uppraisalconsultant.com"
-                  className="text-sm/6 text-gray-400 flex hover:text-white"
+                  className="flex items-center gap-2.5 text-slate-400 hover:text-white transition-colors"
                 >
-                  <EnvelopeIcon className="h-5 w-5 mr-2" />
+                  <EnvelopeIcon className="h-4 w-4 text-slate-500 flex-shrink-0" />
                   <span>hr@uppraisalconsultant.com</span>
                 </a>
               </li>
@@ -139,9 +165,9 @@ export default function FooterSection() {
                   href="https://uppraisalconsultant.in"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm/6 text-gray-400 flex hover:text-white"
+                  className="flex items-center gap-2.5 text-slate-400 hover:text-white transition-colors"
                 >
-                  <MapPinIcon className="h-5 w-5 mr-2" />
+                  <MapPinIcon className="h-4 w-4 text-slate-500 flex-shrink-0" />
                   <span>uppraisalconsultant.in</span>
                 </a>
               </li>
@@ -149,16 +175,21 @@ export default function FooterSection() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-800">
-          <p className="text-sm text-center text-gray-400">
+        <div className="mt-14 pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <p>
             &copy; {new Date().getFullYear()} Uppraisal Consultant. All rights reserved.
           </p>
-        </div>
-        <div className="flex gap-1 sm:justify-end mt-3 sm:mt-2 justify-center"> 
-          <p className="text-sm text-center text-gray-400">Website developed by</p>
-        <a href="https://portfolio-website-ochre-gamma-18.vercel.app/" className="text-sm/6 flex text-gray-400 hover:text-white">
-                  <span className="text-[#045be6] text-md font-semibold">Hameedullah Shaik and Praveen Gunja</span>
-        </a>
+          <div className="flex items-center gap-1.5 text-slate-400">
+            <span>Website developed by</span>
+            <a
+              href="https://portfolio-website-ochre-gamma-18.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-blue-400 hover:text-blue-300 transition-colors"
+            >
+              Hameedullah Shaik &amp; Praveen Gunja
+            </a>
+          </div>
         </div>
       </div>
     </footer>

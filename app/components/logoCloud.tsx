@@ -1,5 +1,4 @@
 "use client";
-import { useEffect, useRef } from "react";
 import Image, { StaticImageData } from "next/image";
 
 import logo1 from "../../public/Clients_logos/ASBESCO.jpg";
@@ -61,34 +60,45 @@ const logos: Logo[] = [
 
 export default function LogoCloud() {
   return (
-    <div className="bg-white py-12 sm:py-16 overflow-hidden">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <h2 className="text-lg sm:text-center font-semibold text-gray-900">
-          Trusted by the world’s most innovative teams
-        </h2>
-        <div className="relative mt-10 flex space-x-9 overflow-hidden logo-cloud w-max">
-          <div className="flex w-max space-x-9 animate-logo-cloud">
+    <section className="bg-white py-20 sm:py-24 overflow-hidden border-t border-slate-200/50">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+        <div className="text-center max-w-2xl mx-auto">
+          <p className="eyebrow justify-center">Corporate Clientele</p>
+          <h2 className="section-title">
+            Trusted by Leading Enterprises & Innovators
+          </h2>
+          <p className="section-subtitle mx-auto">
+            From conglomerates to fast-scaling startups across India, companies rely on Uppraisal for their most critical human capital needs.
+          </p>
+        </div>
+
+        {/* Marquee with edge-fade gradient masks */}
+        <div className="relative mt-14 overflow-hidden mask-fade-edges py-4">
+          <div className="flex w-max space-x-12 logo-cloud">
             {[...logos, ...logos].map((logo, index) => (
-              <div key={index} className="flex flex-none justify-center px-2">
+              <div
+                key={index}
+                className="flex flex-none items-center justify-center rounded-2xl bg-slate-50/80 border border-slate-100 px-6 py-4 transition-all duration-300 hover:border-blue-200 hover:bg-white hover:shadow-md"
+              >
                 <Image
                   src={logo.url}
-                  width={120}
-                  height={40}
-                  className="h-16 w-48 object-contain"
+                  width={140}
+                  height={50}
+                  className="h-12 w-36 object-contain opacity-75 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
                   alt={logo.name}
                 />
               </div>
             ))}
           </div>
         </div>
-        <div className="mt-16 flex justify-center">
-          <p className="relative rounded-full bg-gray-50 px-4 py-1.5 text-sm text-gray-600 ring-1 ring-gray-900/5">
-            <span className="hidden md:inline">
-              Over 25+ companies use our tools to better their business.
-            </span>
-          </p>
+
+        <div className="mt-14 flex justify-center">
+          <div className="inline-flex items-center gap-2 rounded-full bg-blue-50/80 border border-blue-200/70 px-4 py-1.5 text-xs font-semibold text-blue-700">
+            <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span>Over 100+ corporate partnerships nurtured nationwide</span>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

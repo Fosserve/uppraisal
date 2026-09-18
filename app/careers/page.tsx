@@ -1,148 +1,237 @@
 "use client";
 
-import { useState } from "react";
-import { CheckCircleIcon } from '@heroicons/react/20/solid'
-import logo from "../../public/uppraisal-logo.png"
-import image1 from "../../public/careerpage.jpg"
+import Image from "next/image";
 import Header from "../components/header";
+import { CheckCircle2, ArrowRight, Briefcase, Sparkles, ExternalLink, Mail, Award, Clock, DollarSign, HeartHandshake } from "lucide-react";
+import { motion } from "framer-motion";
 
-
-const pages = [
-  { name: 'Careers', href: '/career', current: false },
-]
-
-const timeline = [
+const processSteps = [
   {
-    name: "Job Analysis & Planning",
-    description: "Defining the role and creating a job description.",
     step: "01",
-    dateTime: "2021-08",
+    name: "Application & Profile Review",
+    description: "Submit your updated CV. Our recruiters evaluate your technical competencies and experience matrix.",
   },
   {
-    name: "Sourcing Candidates",
-    description: "Finding potential candidates through internal and external channels.",
     step: "02",
-    dateTime: "2021-08",
+    name: "Initial Discovery Call",
+    description: "A 20-minute exploratory conversation discussing your aspirations, skills, and expectations.",
   },
   {
-    name: "Screening & Shortlisting",
-    description: "Reviewing applications and conducting initial interviews.",
     step: "03",
-    dateTime: "2021-08",
+    name: "Client Interview Rounds",
+    description: "Personalized coaching and debriefs as you meet hiring managers from top partner firms.",
   },
   {
-    name: "Selection & Onboarding",
-    description: "Making an offer and welcoming the new hire.",
-    dateTime: "2021-08",
     step: "04",
+    name: "Offer & Smooth Onboarding",
+    description: "Transparent compensation negotiation, offer release, and structured Day-1 onboarding support.",
   },
 ];
 
 const benefits = [
-  'Competitive salaries',
-  'Flexible work hours',
-  '30 days of paid vacation',
-  'Annual team retreats',
-  'Benefits for you and your family',
-  'A great work environment',
-]
+  { text: "Access to verified Tier-1 & MNC employers", icon: Award },
+  { text: "Competitive salary benchmarking", icon: DollarSign },
+  { text: "Flexible work & hybrid options", icon: Clock },
+  { text: "Personalized career guidance & interview prep", icon: HeartHandshake },
+  { text: "Expedited feedback within 48-72 hours", icon: CheckCircle2 },
+  { text: "Strict confidentiality of your data", icon: Sparkles },
+];
 
-export default function Timeline() {
-  const [agreed, setAgreed] = useState(false);
-
+export default function CareersPage() {
   return (
-    <div className="bg-white">
+    <div className="bg-[#fbfaf6] min-h-screen">
       <Header />
-      
-      {/* Hero Section */}
-      <div className="relative mt-10 mx-auto max-w-7xl sm:px-6 rounded-md lg:px-8 bg-gray-900">
-        <div className="relative h-80 overflow-hidden bg-[#4bbcff] md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2 rounded-md">
-          <img
-            alt=""
-            src="https://media.istockphoto.com/id/1409520341/photo/group-of-young-people-discussing-in-the-co-working-office.jpg?s=612x612&w=0&k=20&c=MMScAoIbvQebCJ3dhr8pZ1izzuWxW_pBJ4yJ1KQfwpM="
-            className="w-full h-full object-cover rounded-md mix-blend-multiply"
-          />
-        </div>
-        <div className="relative mx-auto max-w-7xl py-12 sm:py-24 lg:px-8 lg:py-32">
-          <div className="px-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pl-24 xl:pl-32">
-            <h2 className="text-base font-semibold text-[#4bbcff]">Grow With Us – Your Future Starts Here</h2>
-            <h1 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl">We're here to help</h1>
-            <p className="mt-4 text-base text-gray-300">
-              We're looking for passionate individuals at every stage of their careers—freshers eager to learn, experienced professionals ready to lead, and trained experts seeking new challenges.
-            </p>
-            <div className="mt-6">
-              <a
-                href="http://careers.uppraisalconsultant.in"
-                className="inline-block rounded-md bg-white/10 px-4 py-2.5 text-sm font-semibold text-white hover:bg-white/20 transition-colors"
+
+      <main className="isolate">
+        {/* Hero Section */}
+        <section className="mx-auto mt-6 max-w-7xl px-5 sm:px-8 lg:px-10">
+          <div className="relative overflow-hidden rounded-[2.5rem] bg-slate-950 text-white shadow-2xl">
+            {/* Background image & gradient overlay */}
+            <div className="absolute inset-0 z-0">
+              <Image
+                alt="Corporate co-working"
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80"
+                fill
+                priority
+                sizes="(max-width: 1280px) 100vw, 1280px"
+                className="object-cover object-center opacity-20"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-transparent" />
+            </div>
+
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center px-6 py-16 sm:px-12 sm:py-24 lg:py-28">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="lg:col-span-7 space-y-6"
               >
-                Visit our Job Portal
-              </a>
+                <div className="inline-flex items-center gap-2 rounded-full bg-blue-500/20 border border-blue-400/30 px-3.5 py-1 text-xs font-semibold text-blue-300">
+                  <Briefcase className="h-3.5 w-3.5" />
+                  <span>Careers at Uppraisal &amp; Partner Firms</span>
+                </div>
+
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.08]">
+                  Your Next Career Breakthrough Starts{" "}
+                  <span className="text-blue-400">Right Here.</span>
+                </h1>
+
+                <p className="text-base sm:text-lg leading-relaxed text-slate-300 max-w-xl">
+                  Whether you are an ambitious fresher or an experienced corporate leader, we connect you with prestigious employers across India offering competitive packages and genuine growth.
+                </p>
+
+                <div className="flex flex-wrap items-center gap-4 pt-2">
+                  <a
+                    href="https://careers.uppraisalconsultant.in"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/30 transition-all hover:bg-blue-500 hover:-translate-y-0.5"
+                  >
+                    <span>Browse Job Openings</span>
+                    <ExternalLink className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                  </a>
+
+                  <a
+                    href="mailto:hr@uppraisalconsultant.com?subject=Job%20Application%20-%20Candidate%20Resume"
+                    className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-5 py-3 text-sm font-semibold text-white backdrop-blur-md transition-all hover:bg-white/20"
+                  >
+                    <Mail className="h-4 w-4" />
+                    <span>Send Resume to HR</span>
+                  </a>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.65, delay: 0.15 }}
+                className="lg:col-span-5"
+              >
+                <div className="rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur-xl space-y-5">
+                  <h3 className="text-lg font-bold text-white">Why Candidates Trust Us</h3>
+                  <div className="space-y-3.5">
+                    {benefits.slice(0, 4).map((b) => {
+                      const Icon = b.icon;
+                      return (
+                        <div key={b.text} className="flex items-start gap-3 text-sm text-slate-300">
+                          <div className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg bg-blue-500/20 text-blue-400">
+                            <Icon className="h-4 w-4" />
+                          </div>
+                          <span className="leading-snug pt-0.5">{b.text}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      {/* Recruitment Process Section */}
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-16 sm:mt-24">
-        <div className="text-center">
-          <p className="text-base font-semibold text-[#0a7aff]">How we filter</p>
-          <h2 className="mt-2 text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
-            Our Process of Recruitment
-          </h2>
-          <p className="mt-4 mx-auto max-w-2xl text-base text-gray-600">
-            We conduct extensive search for quality candidates based on our client preferences and requirements.
-          </p>
-        </div>
-        <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {timeline.map((item) => (
-            <div key={item.name} className="p-6 rounded-lg hover:bg-gray-50 transition-colors">
-              <div className="flex items-center text-sm font-semibold text-[#0a7aff]">
-                <span className="mr-2">•</span>
-                {item.step}
-              </div>
-              <h3 className="mt-4 text-lg font-semibold text-gray-900">{item.name}</h3>
-              <p className="mt-2 text-base text-gray-600">{item.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Join Our Team Section */}
-      <div className="mt-16 sm:my-24">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-          <div className="bg-gray-800 rounded-3xl p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-            <img
-              alt="Career page"
-              src={"https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
-              className="w-full lg:w-1/2 h-96 lg:h-[20rem] object-cover rounded-2xl shadow-xl"
-            />
-            <div className="w-full lg:w-1/2 space-y-6">
-              <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                Join our team
+        {/* Candidate Hiring Process */}
+        <section className="py-20 sm:py-28">
+          <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+            <div className="text-center max-w-2xl mx-auto mb-16">
+              <p className="eyebrow justify-center">The Candidate Journey</p>
+              <h2 className="section-title">
+                A Transparent Path from Application to Day One
               </h2>
-              <p className="text-lg text-gray-300">
-                How do you create remarkable change? By hiring, celebrating and nurturing the best people-from all walks of life.
+              <p className="section-subtitle mx-auto">
+                No black holes. We provide continuous feedback and interview coaching at every milestone of your recruitment process.
               </p>
-              <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {benefits.map((benefit) => (
-                  <li key={benefit} className="flex items-center gap-2 text-base text-white">
-                    <CheckCircleIcon className="h-5 w-5 text-[#0a7aff]" />
-                    {benefit}
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-8">
-                <a
-                  href="http://careers.uppraisalconsultant.in"
-                  className="inline-flex items-center text-sm font-semibold text-[#0a7aff] hover:text-[#0a7aff]/80 transition-colors"
+            </div>
+
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {processSteps.map((step, idx) => (
+                <motion.div
+                  key={step.step}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  className="group relative rounded-2xl border border-slate-200/90 bg-white p-6 shadow-xs transition-all duration-300 hover:border-blue-300 hover:shadow-xl hover:-translate-y-1"
                 >
-                  See our job postings <span aria-hidden="true" className="ml-1">&rarr;</span>
-                </a>
-              </div>
+                  <div className="flex items-center justify-between">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-base font-black text-blue-600 font-mono group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                      {step.step}
+                    </span>
+                    <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Phase {idx + 1}</span>
+                  </div>
+                  <h3 className="mt-5 text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                    {step.name}
+                  </h3>
+                  <p className="mt-2.5 text-sm leading-relaxed text-slate-600">
+                    {step.description}
+                  </p>
+                </motion.div>
+              ))}
             </div>
           </div>
-        </div>
-      </div>
+        </section>
+
+        {/* Corporate Culture & Benefits Banner */}
+        <section className="py-16 sm:py-20 bg-white border-y border-slate-200/60">
+          <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+            <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="space-y-6"
+              >
+                <p className="eyebrow">Life At Uppraisal</p>
+                <h2 className="section-title">
+                  Nurturing Extraordinary Talent from All Walks of Life
+                </h2>
+                <p className="text-base sm:text-lg leading-relaxed text-slate-600">
+                  We believe remarkable companies are built on empathy, meritocracy, and open communication. Whether working directly on our internal team or via our client placements, we champion your long-term career fulfillment.
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                  {benefits.map((benefit) => {
+                    const Icon = benefit.icon;
+                    return (
+                      <div key={benefit.text} className="flex items-center gap-2.5 text-sm font-medium text-slate-800">
+                        <CheckCircle2 className="h-5 w-5 text-blue-600 flex-shrink-0" />
+                        <span>{benefit.text}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                <div className="pt-4">
+                  <a
+                    href="https://careers.uppraisalconsultant.in"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-700"
+                  >
+                    <span>Visit our live job portal</span>
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-xl ring-1 ring-slate-900/10"
+              >
+                <Image
+                  alt="Inclusive team culture"
+                  src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=1200&q=80"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </motion.div>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
   );
 }

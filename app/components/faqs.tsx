@@ -1,50 +1,144 @@
+"use client";
+
+import React, { useState } from "react";
+import { ChevronDown, HelpCircle, Mail } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
 const faqs = [
-        {
-          id: 1,
-          question: "How can I apply for a job?",
-          answer: "You can apply by visiting our careers page and submitting your application online. Ensure your resume is up to date."
-        },
-        {
-          id: 2,
-          question: "What qualifications do I need to apply?",
-          answer: "The qualifications vary depending on the position. Please review the job description for specific requirements."
-        },
-        {
-          id: 3,
-          question: "What is the recruitment process?",
-          answer: "Our recruitment process typically includes an application review, an initial screening, one or more interviews, and a final decision."
-        },
-        {
-          id: 4,
-          question: "How long does the hiring process take?",
-          answer: "The process duration depends on the role but usually takes 2-4 weeks from the application submission to final decision."
-        },
-        // {
-        //   id: 5,
-        //   question: "Can I apply for multiple positions?",
-        //   answer: "Yes, you are welcome to apply for any positions that match your skills and experience."
-        // }
-      
-    // More questions...
-  ]
-  
-  export default function Faqs() {
-    return (
-      <div className="bg-white">
-        <div className="mx-auto max-w-7xl divide-y divide-gray-900/10 px-6 py-12 sm:py-16 lg:px-8   ">
-          <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl sm:text-center">Frequently asked questions</h2>
-          <dl className="mt-10 space-y-8 divide-y divide-gray-900/10">
-            {faqs.map((faq) => (
-              <div key={faq.id} className="pt-8 lg:grid lg:grid-cols-12 lg:gap-8">
-                <dt className="text-base/7 font-semibold text-gray-900 lg:col-span-5">{faq.question}</dt>
-                <dd className="mt-4 lg:col-span-7 lg:mt-0">
-                  <p className="text-base/7 text-gray-600">{faq.answer}</p>
-                </dd>
+  {
+    id: 1,
+    question: "What industries and verticals does Uppraisal Consultant specialize in?",
+    answer:
+      "We serve diverse sectors across India, including IT/Software, Manufacturing, Engineering, Banking & Financial Services, Retail, Hospitality, Healthcare, and Logistics. Our consultants bring deep vertical domain expertise for both technical and non-technical talent.",
+  },
+  {
+    id: 2,
+    question: "How long does your typical recruitment cycle take?",
+    answer:
+      "For standard professional roles, we present pre-screened, verified candidate shortlists within 3 to 7 business days. For C-suite executive searches or highly niche specialized profiles, the end-to-end cycle typically takes 2 to 4 weeks.",
+  },
+  {
+    id: 3,
+    question: "How can candidates apply for active job openings?",
+    answer:
+      "Candidates can explore and apply through our dedicated careers portal (careers.uppraisalconsultant.in) or email an updated resume directly to hr@uppraisalconsultant.com. Our recruitment specialists review every profile against active and upcoming mandates.",
+  },
+  {
+    id: 4,
+    question: "What background verifications and candidate checks do you conduct?",
+    answer:
+      "Our multi-tiered screening evaluates academic credentials, previous employment tenures, compensation structures, performance records, and professional reference checks to guarantee authenticity before candidate presentation.",
+  },
+  {
+    id: 5,
+    question: "How do your Payroll & Statutory Compliance services benefit businesses?",
+    answer:
+      "We handle complete payroll computation, PF, ESI, PT, TDS deductions, and statutory filing. This mitigates compliance penalties, saves internal HR bandwidth, and provides employees with a dedicated desk for salary queries.",
+  },
+  {
+    id: 6,
+    question: "Do you provide customized corporate training and leadership workshops?",
+    answer:
+      "Yes. We conduct bespoke behavioral, soft-skills, operational, and motivational workshops led by senior industry facilitators designed to enhance team morale, communication, and executive productivity.",
+  },
+];
+
+export default function Faqs() {
+  const [openId, setOpenId] = useState<number | null>(1);
+
+  const toggleFaq = (id: number) => {
+    setOpenId(openId === id ? null : id);
+  };
+
+  return (
+    <section className="bg-white py-20 sm:py-28 overflow-hidden border-t border-slate-200/50">
+      <div className="mx-auto max-w-5xl px-5 sm:px-8 lg:px-10">
+        <div className="text-center max-w-2xl mx-auto">
+          <p className="eyebrow justify-center">
+            <HelpCircle className="h-3.5 w-3.5" />
+            Frequently Asked Questions
+          </p>
+          <h2 className="section-title">
+            Answers to Common Questions
+          </h2>
+          <p className="section-subtitle mx-auto">
+            Everything you need to know about our recruitment workflow, consultation models, and candidate partnerships.
+          </p>
+        </div>
+
+        <div className="mt-14 space-y-4">
+          {faqs.map((faq) => {
+            const isOpen = openId === faq.id;
+            return (
+              <div
+                key={faq.id}
+                className={`rounded-2xl border transition-all duration-200 ${
+                  isOpen
+                    ? "border-blue-300 bg-blue-50/30 shadow-sm"
+                    : "border-slate-200/90 bg-white hover:border-slate-300"
+                }`}
+              >
+                <button
+                  type="button"
+                  onClick={() => toggleFaq(faq.id)}
+                  aria-expanded={isOpen}
+                  className="flex w-full items-center justify-between p-6 text-left"
+                >
+                  <span className="text-base sm:text-lg font-semibold text-slate-900 pr-4">
+                    {faq.question}
+                  </span>
+                  <div
+                    className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full transition-transform duration-300 ${
+                      isOpen
+                        ? "bg-blue-600 text-white rotate-180"
+                        : "bg-slate-100 text-slate-600"
+                    }`}
+                  >
+                    <ChevronDown className="h-4 w-4" />
+                  </div>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      key="content"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 pb-6 pt-1 text-sm sm:text-base leading-relaxed text-slate-600 border-t border-slate-100">
+                        {faq.answer}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
-            ))}
-          </dl>
+            );
+          })}
+        </div>
+
+        {/* Support Callout */}
+        <div className="mt-14 rounded-2xl bg-[#fbfaf6] border border-slate-200/80 p-6 sm:p-8 text-center">
+          <h3 className="text-base sm:text-lg font-bold text-slate-900">
+            Have a question that isn&apos;t listed here?
+          </h3>
+          <p className="mt-1 text-sm text-slate-600">
+            Our team is available to assist you with specific inquiries regarding our recruitment services.
+          </p>
+          <div className="mt-5 flex justify-center">
+            <a
+              href="mailto:hr@uppraisalconsultant.com"
+              className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 transition-colors"
+            >
+              <Mail className="h-4 w-4" />
+              <span>Write to hr@uppraisalconsultant.com</span>
+            </a>
+          </div>
         </div>
       </div>
-    )
-  }
+    </section>
+  );
+}
   
